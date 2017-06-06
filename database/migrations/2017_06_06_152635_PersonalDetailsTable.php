@@ -13,7 +13,18 @@ class PersonalDetailsTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('personals',function( Blueprint $table){
+            $table->increments('id');
+            $table->integer('user_id')->unsigned()->index();
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade');
+            $table->string('firstname');
+            $table->string('middlename')->nullable();
+            $table->string('lastname');
+            $table->date('birthdate');
+            $table->string('nationality');
+            $table->timestamps();
+
+        });
     }
 
     /**
@@ -23,6 +34,6 @@ class PersonalDetailsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('personals');
     }
 }
