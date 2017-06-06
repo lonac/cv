@@ -23,7 +23,7 @@ class EducationDetailsController extends Controller
      */
     public function create()
     {
-        //
+        return view('educationdetails.create');
     }
 
     /**
@@ -43,9 +43,9 @@ class EducationDetailsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+       return view('educationdetails.show');
     }
 
     /**

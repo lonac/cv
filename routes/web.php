@@ -22,3 +22,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('personaldetails/create','PersonalDetailsController@create');
 Route::post('personaldetails/create','PersonalDetailsController@store');
 Route::get('personaldetails/show','PersonalDetailsController@show');
+
+Route::get('educationdetails/create','EducationDetailsController@create');
+Route::post('educationdetails/create','EducationDetailsController@store');
+Route::get('educationdetails/show','EducationDetailsController@show');
+
