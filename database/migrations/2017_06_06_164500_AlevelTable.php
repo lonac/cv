@@ -13,7 +13,16 @@ class AlevelTable extends Migration
      */
     public function up()
     {
-        //
+         Schema::create('alevels',function( Blueprint $table){
+                $table->increments('id');
+                $table->integer('user_id')->unsigned()->index();
+                $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade');
+                $table->string('alevname');
+                $table->string('ayear');
+                $table->string('remark');
+                $table->timestamps();
+
+            });
     }
 
     /**
@@ -23,6 +32,6 @@ class AlevelTable extends Migration
      */
     public function down()
     {
-        //
+     Schema::dropIfExists('alevels');
     }
 }

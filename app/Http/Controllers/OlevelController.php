@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Auth;
+
+use App\Olevel;
+
 class OlevelController extends Controller
 {
     /**
@@ -23,7 +27,7 @@ class OlevelController extends Controller
      */
     public function create()
     {
-        //
+        return view('olevel.create');
     }
 
     /**
@@ -34,7 +38,19 @@ class OlevelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = Auth::user();
+
+        $olev = new Olevel;
+        $olev->olevname = $request->input('olevname');
+        $olev->oyear = $request->input('oyear');
+        $olev->remark = $request->input('remark');
+        $olev->user_id = $user->id;
+
+        $olev->save();
+
+        $ol = $user->olevels;
+
+        return view('olevel.show',compact('ol'));
     }
 
     /**
@@ -43,9 +59,12 @@ class OlevelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $user = Auth::user();
+           $ol = $user->olevels;
+
+        return view('olevel.show',compact('ol'));
     }
 
     /**

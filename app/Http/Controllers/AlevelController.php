@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Auth;
+
+use App\Alevel;
+
 class AlevelController extends Controller
 {
     /**
@@ -23,7 +27,8 @@ class AlevelController extends Controller
      */
     public function create()
     {
-        //
+                return view('alevel.create');
+
     }
 
     /**
@@ -34,7 +39,19 @@ class AlevelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $user = Auth::user();
+
+                $alev = new Alevel;
+                $alev->alevname = $request->input('alevname');
+                $alev->ayear = $request->input('ayear');
+                $alev->remark = $request->input('remark');
+                $alev->user_id = $user->id;
+
+                $alev->save();
+
+                $al = $user->alevels;
+
+                return view('alevel.show',compact('al'));
     }
 
     /**
@@ -43,9 +60,12 @@ class AlevelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $user = Auth::user();
+           $al = $user->alevels;
+
+        return view('alevel.show',compact('al'));
     }
 
     /**

@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Auth;
+
+use App\Certificatelevel;
+
 class CertificatelevelController extends Controller
 {
     /**
@@ -23,7 +27,7 @@ class CertificatelevelController extends Controller
      */
     public function create()
     {
-        //
+         return view('clevel.create');
     }
 
     /**
@@ -34,7 +38,19 @@ class CertificatelevelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = Auth::user();
+
+                $clev = new Certificatelevel;
+                $clev->alevname = $request->input('colname');
+                $clev->ayear = $request->input('cyear');
+                $clev->remark = $request->input('remark');
+                $clev->user_id = $user->id;
+
+                $clev->save();
+
+                $cl = $user->alevels;
+
+                return view('clevel.show',compact('cl'));
     }
 
     /**
@@ -43,9 +59,12 @@ class CertificatelevelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $user = Auth::user();
+           $cl = $user->alevels;
+
+        return view('clevel.show',compact('cl'));
     }
 
     /**
