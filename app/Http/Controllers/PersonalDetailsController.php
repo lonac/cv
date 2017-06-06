@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Auth;
+
+use App\Personaldetails;
+
 class PersonalDetailsController extends Controller
 {
     /**
@@ -34,7 +38,20 @@ class PersonalDetailsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = Auth::user();
+
+        $pers = new Personaldetails;
+
+        $pers->firstname = $request->input('firstname');
+        $pers->middlename = $request->input('middlename');
+        $pers->lastname = $request->input('lastname');
+        $pers->user_id = $user->id;
+        $pers->nationality = $request->input('nationality');
+        $pers->birthdate = $request->input('birthdate');
+
+        $pers->save();
+
+        return view('personaldetails.show');
     }
 
     /**
@@ -45,7 +62,11 @@ class PersonalDetailsController extends Controller
      */
     public function show()
     {
-         return view('personaldetails.show');
+
+        $user = Auth::user();
+        $pers = $user->personaldetails;
+
+         return view('personaldetails.show',compact('pers'));
     }
 
     /**

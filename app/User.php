@@ -27,8 +27,8 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function personals()
+    public function personaldetails()
     {
-        return $this->hasOne('App\PersonalDetails');
+        return $this->hasOne('App\Personaldetails');
     }
 }
