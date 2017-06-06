@@ -23,7 +23,7 @@ class PersonalDetailsController extends Controller
      */
     public function create()
     {
-        //
+        return view('personaldetails.create');
     }
 
     /**
@@ -43,9 +43,9 @@ class PersonalDetailsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+         return view('personaldetails.show');
     }
 
     /**
