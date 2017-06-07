@@ -21,6 +21,7 @@
                         	</div>
 						</div>
                    			<button type="submit" class="btn btn-success">Create</button>
+                   			    <a href="{{url('mycv/show')}}" class="btn btn-success" role="button">DONE</a>
 						</div>
 							</form>
 							

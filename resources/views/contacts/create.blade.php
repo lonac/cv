@@ -29,7 +29,7 @@
                                 <input id="address" type="address" class="form-control" name="address" placeholder="address">
                         	</div>
 						</div>
-                   			<button type="submit" class="btn btn-success">Create</button>
+                   			<button type="submit" class="btn btn-success">SAVE</button>
                    			<a href="{{url('olevel/create')}}" class="btn btn-success" role="button">NEXT</a>
 						</div>
 							</form>
