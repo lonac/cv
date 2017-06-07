@@ -81,7 +81,8 @@ ul li a i:hover {
          <div class="row">
             <div class="col-md-10">
                 <p class="text-center">
-                    &copy 2017 DIAW | All Rights Reserved
+                   <strong>&copy 2017 CV-CREATOR | Developed by Baraka Malongo | All Rights Reserved.</strong>
+
                 </p>
             </div>    
         </div>
