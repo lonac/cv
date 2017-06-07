@@ -72,4 +72,10 @@ Route::get('plevel/show','PhdlevelController@show');
 //Mycv
 Route::get('mycv/show','MycvController@index');
 
+//experiences
+Route::get('experience/create','ExperienceController@create');
+Route::post('experience/create','ExperienceController@store');
+Route::get('experience/show','ExperienceController@show');
+
+
 

@@ -25,7 +25,7 @@
 						</div>
 					@endforeach
 			@else
-
+				<a href="{{url('personaldetails/create')}}">Add Personal Details?</a>
 			@endif
 
 			{{--  Contacts--}}
@@ -42,6 +42,8 @@
 					</div>
 				</div>
 				@endforeach
+			@else
+				<a href="{{url('contacts/create')}}">Add Contacts Details?</a>
 			@endif
 
 		</div>
@@ -152,6 +154,10 @@
 				@endforeach
 			@endif
 
+		</div>
+
+		<div class="row">
+			@include('experience._form')
 		</div>
 	</div>
 

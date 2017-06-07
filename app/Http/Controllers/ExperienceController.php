@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Auth;
+
+use App\Experience;
+
 class ExperienceController extends Controller
 {
     /**
@@ -23,7 +27,7 @@ class ExperienceController extends Controller
      */
     public function create()
     {
-        //
+        return view('experience.create');
     }
 
     /**
@@ -34,7 +38,18 @@ class ExperienceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = Auth::user();
+
+        $exp = new Experience;
+        $exp->organisation = $request->input('organisation');
+        $exp->role = $request->input('role');
+        $exp->user_id = $user->id;
+
+        $exp->save();
+
+        $ex = $user->experiences;
+
+        return view('experience.show',compact('ex'));
     }
 
     /**
@@ -43,9 +58,12 @@ class ExperienceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $user = Auth::user();
+           $ex = $user->experiences;
+           
+        return view('experience.show',compact('ex'));
     }
 
     /**

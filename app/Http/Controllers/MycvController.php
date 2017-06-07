@@ -25,8 +25,10 @@ class MycvController extends Controller
         $dgl = $user->degreelevels;
         $ml = $user->masterslevels;
         $pl = $user->phdlevels;
+        $ex = $user->experiences;
 
-        return view('mycv.show',compact('cont','pers','ol','al','cl','dl','dgl','ml','pl'));
+        return view('mycv.show',compact('cont','pers','ol','al',
+            'cl','dl','dgl','ml','pl','ex'));
     }
 
     /**
