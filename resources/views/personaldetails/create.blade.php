@@ -43,7 +43,8 @@
                             <div class="col-md-6">
                                 <input id="birthdate" type="date" class="form-control" name="birthdate">
                         	</div>
-                   			<button type="submit" class="btn btn-success">Create</button>
+                   			<button type="submit" class="btn btn-success">Save</button>
+                   			<a href="{{url('contacts/create')}}" class="btn btn-success" role="button">Next</a>
 						</div>
 							</form>
 						</div>

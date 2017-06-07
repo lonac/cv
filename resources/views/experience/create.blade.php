@@ -27,6 +27,7 @@
                         	</div>
 						</div>
                    			<button type="submit" class="btn btn-success">Create</button>
+                   			<a href="{{url('interests/create')}}" class="btn btn-success" role="button">NEXT</a>
 						</div>
 							</form>
 							

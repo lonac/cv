@@ -32,8 +32,8 @@
                                 <input id="remark" type="text" class="form-control" name="remark" placeholder="eg. class monitor">
                         	</div>
 						</div>
-                   			<button type="submit" class="btn btn-success">Save</button>
-                   			<a href="{{url('alevel/create')}}" role="button" class="btn btn-success">SKIP</a>
+                   			<button type="submit" class="btn btn-success">SAVE</button>
+                   			<a href="{{url('clevel/create')}}" role="button" class="btn btn-success">NEXT</a>
 						</div>
 							</form>
 						</div>

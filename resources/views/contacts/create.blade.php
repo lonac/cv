@@ -30,6 +30,7 @@
                         	</div>
 						</div>
                    			<button type="submit" class="btn btn-success">Create</button>
+                   			<a href="{{url('olevel/create')}}" class="btn btn-success" role="button">NEXT</a>
 						</div>
 							</form>
 							

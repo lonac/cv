@@ -32,7 +32,8 @@
                                 <input id="remark" type="text" class="form-control" name="remark" placeholder="eg. class monitor">
                         	</div>
 						</div>
-                   			<button type="submit" class="btn btn-success">Save</button>
+                   			<button type="submit" class="btn btn-success">SAVE</button>
+                   			<a href="{{url('dlevel/create')}}" class="btn btn-success" role="button">NEXT</a>
 						</div>
 							</form>
 						</div>

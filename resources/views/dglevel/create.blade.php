@@ -32,7 +32,8 @@
                                 <input id="program" type="text" class="form-control" name="program" placeholder="Diploma in ICT">
                         	</div>
 						</div>
-                   			<button type="submit" class="btn btn-success">Save</button>
+                   			<button type="submit" class="btn btn-success">SAVE</button>
+                   			<a href="{{url('mlevel/create')}}" class="btn btn-success" role="button">NEXT</a>
 						</div>
 							</form>
 						</div>
