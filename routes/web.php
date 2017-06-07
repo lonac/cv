@@ -27,6 +27,12 @@ Route::get('educationdetails/create','EducationDetailsController@create');
 Route::post('educationdetails/create','EducationDetailsController@store');
 Route::get('educationdetails/show','EducationDetailsController@show');
 
+//contacts
+Route::get('contacts/create','ContactController@create');
+Route::post('contacts/create','ContactController@store');
+Route::get('contacts/show','ContactController@show');
+
+
 //oleve
 Route::get('olevel/create','OlevelController@create');
 Route::post('olevel/create','OlevelController@store');
@@ -65,3 +71,5 @@ Route::get('plevel/show','PhdlevelController@show');
 
 //Mycv
 Route::get('mycv/show','MycvController@index');
+
+

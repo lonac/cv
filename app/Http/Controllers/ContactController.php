@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Auth;
+
+use App\Contacts;
+
 class ContactController extends Controller
 {
     /**
@@ -23,7 +27,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+        return view('contacts.create');
     }
 
     /**
@@ -34,8 +38,20 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $user = Auth::user();
+
+        $cont = new Contacts;
+
+        $cont->phonenumber = $request->input('phonenumber');
+        $cont->user_id = $user->id;
+        $cont->address = $request->input('address');
+        $cont->save();
+
+        $cont = $user->contacts;
+
+         return view('contacts.show',compact('cont'));
+
+           }
 
     /**
      * Display the specified resource.
@@ -43,9 +59,12 @@ class ContactController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $user = Auth::user();
+        $cont = $user->contacts;
+
+         return view('contacts.show',compact('cont'));
     }
 
     /**
