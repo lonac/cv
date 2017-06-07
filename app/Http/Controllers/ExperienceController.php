@@ -49,7 +49,7 @@ class ExperienceController extends Controller
 
         $ex = $user->experiences;
 
-        return view('experience.show',compact('ex'));
+        return view('experience.create',compact('ex'));
     }
 
     /**

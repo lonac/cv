@@ -49,7 +49,7 @@ class InterestsController extends Controller
 
         $int = $user->interests;
 
-        return view('interests.show',compact('int'));
+        return view('interests.create',compact('int'));
     }
 
     /**

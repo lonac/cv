@@ -50,7 +50,7 @@ class DegreelevelController extends Controller
 
                 $dgl = $user->degreelevels;
 
-                return view('dglevel.show',compact('dgl'));
+                return view('dglevel.create',compact('dgl'));
     }
 
     /**

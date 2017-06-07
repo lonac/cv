@@ -50,7 +50,7 @@ class CertificatelevelController extends Controller
 
                 $cl = $user->certificatelevels;
 
-                return view('clevel.show',compact('cl'));
+                return view('clevel.create',compact('cl'));
     }
 
     /**

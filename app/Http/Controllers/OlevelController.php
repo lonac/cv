@@ -50,7 +50,7 @@ class OlevelController extends Controller
 
         $ol = $user->olevels;
 
-        return view('olevel.show',compact('ol'));
+        return view('olevel.create',compact('ol'));
     }
 
     /**

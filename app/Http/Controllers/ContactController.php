@@ -49,7 +49,7 @@ class ContactController extends Controller
 
         $cont = $user->contacts;
 
-         return view('contacts.show',compact('cont'));
+         return view('contacts.create',compact('cont'));
 
            }
 

@@ -51,7 +51,7 @@ class PhdlevelController extends Controller
 
                 $pl = $user->phdlevels;
 
-                return view('plevel.show',compact('pl'));
+                return view('plevel.create',compact('pl'));
     }
 
     /**

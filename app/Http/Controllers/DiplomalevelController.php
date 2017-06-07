@@ -51,7 +51,7 @@ class DiplomalevelController extends Controller
 
                 $dl = $user->diplomalevels;
 
-                return view('dlevel.show',compact('dl'));
+                return view('dlevel.create',compact('dl'));
     }
 
     /**

@@ -50,7 +50,7 @@ class MasterslevelController extends Controller
 
                 $ml = $user->masterslevels;
 
-                return view('mlevel.show',compact('ml'));
+                return view('mlevel.create',compact('ml'));
     }
 
     /**
