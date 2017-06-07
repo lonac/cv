@@ -29,41 +29,41 @@ class User extends Authenticatable
 
     public function personaldetails()
     {
-        return $this->hasOne('App\Personaldetails');
+        return $this->hasMany('App\Personaldetails');
     }
 
     public function olevels()
     {
-        return $this->hasOne('App\Olevel');
+        return $this->hasMany('App\Olevel');
     }
 
     public function alevels()
     {
-        return $this->hasOne('App\Alevel');
+        return $this->hasMany('App\Alevel');
     }
     public function certificatelevels()
     {
-        return $this->hasOne('App\Certificatelevel');
+        return $this->hasMany('App\Certificatelevel');
     }
 
     public function diplomalevels()
         {
-            return $this->hasOne('App\Diplomalevel');
+            return $this->hasMany('App\Diplomalevel');
         }
 
     public function degreelevels()
         {
-            return $this->hasOne('App\Degreelevel');
+            return $this->hasMany('App\Degreelevel');
         }
 
     public function masterslevels()
         {
-            return $this->hasOne('App\Masterslevel');
+            return $this->hasMany('App\Masterslevel');
         }
 
      public function phdlevels()
         {
-            return $this->hasOne('App\Phdlevel');
+            return $this->hasMany('App\Phdlevel');
         }
 
     public function contacts()

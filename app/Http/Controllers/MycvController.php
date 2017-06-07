@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Auth;
+
 class MycvController extends Controller
 {
     /**
@@ -13,7 +15,18 @@ class MycvController extends Controller
      */
     public function index()
     {
-        return view('mycv.show');
+        $user= Auth::user();
+        $cont = $user->contacts;
+        $pers = $user->personaldetails;
+        $ol = $user->olevels;
+        $al = $user->alevels;
+        $cl = $user->certificatelevels;
+        $dl = $user->diplomalevels;
+        $dgl = $user->degreelevels;
+        $ml = $user->masterslevels;
+        $pl = $user->phdlevels;
+
+        return view('mycv.show',compact('cont','pers','ol','al','cl','dl','dgl','ml','pl'));
     }
 
     /**

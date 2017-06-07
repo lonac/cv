@@ -12,4 +12,9 @@ class Contacts extends Model
     {
     	return $this->belongsTo('App\User');
     }
+
+    public function myemail()
+    {
+    	return $this->belongsTo('App\User','user_id');
+    }
 }
