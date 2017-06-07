@@ -3,12 +3,16 @@
 @section('title','Contacts')
 
 @section('content')
+
+@if(Auth::guest())
+@else						
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 col-md-offset-2">
 				<div class="panel panel-inverse">
 					<div class="panel-heading">Add Contacts:</div>
 					<div class="panel-body">
+
 						<form method="POST" action="{{ url('contacts/create') }}">
 
 						{{ csrf_field() }}
@@ -28,6 +32,7 @@
                    			<button type="submit" class="btn btn-success">Create</button>
 						</div>
 							</form>
+							
 						</div>
 				</div>
 			</div>
@@ -35,5 +40,6 @@
 		</div>
 
 	</div>
+	@endif
 
 @endsection

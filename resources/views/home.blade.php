@@ -8,7 +8,7 @@
             <div class="panel panel-inverse">
                 <div class="panel-heading">CV-CREATOR</div>
                 <div class="panel-body">
-                    
+                	<a href="{{url('mycv/show')}}" role="button" class="btn btn-primary">Mycv</a>       
                 </div>
             </div>
         </div>
