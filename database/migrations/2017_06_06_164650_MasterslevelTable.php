@@ -19,7 +19,7 @@ class MasterslevelTable extends Migration
             $table->integer('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade');
             $table->string('uniname');
-            $table->string('dgyear');
+            $table->string('myear');
             $table->string('program');
             $table->timestamps();
 

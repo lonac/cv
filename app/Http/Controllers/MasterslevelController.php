@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Auth;
+
+use App\Masterslevel;
+
 class MasterslevelController extends Controller
 {
     /**
@@ -23,7 +27,7 @@ class MasterslevelController extends Controller
      */
     public function create()
     {
-        //
+            return view('mlevel.create');
     }
 
     /**
@@ -34,7 +38,19 @@ class MasterslevelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = Auth::user();
+
+                $mlev = new Masterslevel;
+                $mlev->uniname = $request->input('uniname');
+                $mlev->myear = $request->input('myear');
+                $mlev->program = $request->input('program');
+                $mlev->user_id = $user->id;
+
+                $mlev->save();
+
+                $ml = $user->masterslevels;
+
+                return view('mlevel.show',compact('ml'));
     }
 
     /**
@@ -43,9 +59,12 @@ class MasterslevelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+         $user = Auth::user();
+           $ml = $user->masterslevels;
+
+             return view('mlevel.show',compact('ml'));
     }
 
     /**

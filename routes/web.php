@@ -53,4 +53,8 @@ Route::get('dglevel/create','DegreelevelController@create');
 Route::post('dglevel/create','DegreelevelController@store');
 Route::get('dglevel/show','DegreelevelController@show');
 
+//Masterslevel
+Route::get('mlevel/create','MasterslevelController@create');
+Route::post('mlevel/create','MasterslevelController@store');
+Route::get('mlevel/show','MasterslevelController@show');
 
