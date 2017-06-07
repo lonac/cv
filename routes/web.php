@@ -43,3 +43,8 @@ Route::get('clevel/create','CertificatelevelController@create');
 Route::post('clevel/create','CertificatelevelController@store');
 Route::get('clevel/show','CertificatelevelController@show');
 
+Route::get('dlevel/create','DiplomalevelController@create');
+Route::post('dlevel/create','DiplomalevelController@store');
+Route::get('dlevel/show','DiplomalevelController@show');
+
+

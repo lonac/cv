@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Auth;
+
+use App\Diplomalevel;
+
 class DiplomalevelController extends Controller
 {
     /**
@@ -23,7 +27,8 @@ class DiplomalevelController extends Controller
      */
     public function create()
     {
-        //
+        return view('dlevel.create');
+
     }
 
     /**
@@ -34,7 +39,19 @@ class DiplomalevelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = Auth::user();
+
+                $dlev = new Diplomalevel;
+                $dlev->colname = $request->input('colname');
+                $dlev->dyear = $request->input('dyear');
+                $dlev->program = $request->input('program');
+                $dlev->user_id = $user->id;
+
+                $dlev->save();
+
+                $dl = $user->diplomalevels;
+
+                return view('dlevel.show',compact('dl'));
     }
 
     /**
@@ -43,9 +60,12 @@ class DiplomalevelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $user = Auth::user();
+           $dl = $user->diplomalevels;
+
+        return view('dlevel.show',compact('dl'));
     }
 
     /**

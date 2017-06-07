@@ -46,5 +46,9 @@ class User extends Authenticatable
         return $this->hasOne('App\Certificatelevel');
     }
 
+    public function diplomalevels()
+        {
+            return $this->hasOne('App\Diplomalevel');
+        }
 
 }
