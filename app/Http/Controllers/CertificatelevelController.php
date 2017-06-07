@@ -41,14 +41,14 @@ class CertificatelevelController extends Controller
         $user = Auth::user();
 
                 $clev = new Certificatelevel;
-                $clev->alevname = $request->input('colname');
-                $clev->ayear = $request->input('cyear');
+                $clev->colname = $request->input('colname');
+                $clev->cyear = $request->input('cyear');
                 $clev->remark = $request->input('remark');
                 $clev->user_id = $user->id;
 
                 $clev->save();
 
-                $cl = $user->alevels;
+                $cl = $user->certificatelevels;
 
                 return view('clevel.show',compact('cl'));
     }
@@ -62,7 +62,7 @@ class CertificatelevelController extends Controller
     public function show()
     {
         $user = Auth::user();
-           $cl = $user->alevels;
+           $cl = $user->certificatelevels;
 
         return view('clevel.show',compact('cl'));
     }

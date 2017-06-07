@@ -41,7 +41,7 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Alevel');
     }
-    public function clevels()
+    public function certificatelevels()
     {
         return $this->hasOne('App\Certificatelevel');
     }

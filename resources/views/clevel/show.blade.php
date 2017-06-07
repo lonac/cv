@@ -10,9 +10,9 @@
 					<div class="panel-heading">Certificate Details:</div>
 					<div class="panel-body">
 						@if($cl->count()>0)
-							<strong>College Name:</strong>{{$cl->alevname}}</br>
-							<strong>Year of Study:</strong>{{$cl->ayear}}
-							<strong>Remarks:{{cl->remark}}</strong>
+							<strong>College Name:</strong>{{$cl->colname}}</br>
+							<strong>Year of Study:</strong>{{$cl->cyear}}</br>
+							<strong>Remarks:</strong>{{$cl->remark}}
 						@else
 							non Certicate level
 						@endif
