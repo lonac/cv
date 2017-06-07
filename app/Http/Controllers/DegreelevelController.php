@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Auth;
+
+use App\Masterslevel;
+
 class DegreelevelController extends Controller
 {
     /**
@@ -23,7 +27,7 @@ class DegreelevelController extends Controller
      */
     public function create()
     {
-        //
+        return view('dglevel.create');
     }
 
     /**
@@ -34,7 +38,19 @@ class DegreelevelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = Auth::user();
+
+                $dglev = new Masterslevel;
+                $dglev->uniname = $request->input('uniname');
+                $dglev->dgyear = $request->input('dgyear');
+                $dglev->program = $request->input('program');
+                $dglev->user_id = $user->id;
+
+                $dglev->save();
+
+                $dgl = $user->masterslevels;
+
+                return view('dglevel.show',compact('dgl'));
     }
 
     /**
@@ -43,9 +59,12 @@ class DegreelevelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $user = Auth::user();
+           $dgl = $user->masterslevels;
+
+        return view('dglevel.show',compact('dgl'));
     }
 
     /**
