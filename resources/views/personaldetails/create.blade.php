@@ -22,7 +22,7 @@
 						<div class="form-group">
                             <label for="middlename" class="col-md-4 control-label">Middle Name</label>
                             <div class="col-md-6">
-                                <input id="middlename" type="text" class="form-control" name="middlename" placeholder="not must">
+                                <input id="middlename" type="text" class="form-control" name="middlename">
                         	</div>
 						</div>
 						<div class="form-group">

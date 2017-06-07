@@ -47,15 +47,17 @@
 			<div class="row">
 				@include('plevel._form');
 			</div>
+			
+			{{--Experiences--}}
+			<div class="row">	
+				@include('experience._form')
+			</div>
 
 			<div class="row">
 				@include('interests._form')
 			</div>
 
-			{{--Experiences--}}
-			<div class="row">	
-				@include('experience._form')
-			</div>
+			
 
 	</div>
 
