@@ -6,47 +6,14 @@
 	<div class="container">
 		<div class="row">
 			{{--  Personal--}}
-			<div class="col-md-3 col-md-offset-2">
-				<div class="panel panel-inverse">
-					<div class="panel-heading"><strong>Personal Details:</strong></div>	
-				</div>
-			</div>
-
-			{{--Names--}}
-			@if($pers->count()>0)
-					@foreach($pers as $personee)
-						<div class="col-md-8 col-md-offset-2">
-							<div class="panel panel-default">
-								<div class="panel-heading">Full Names</div>
-								<div class="panel-body">
-									strong>FirstName:</strong>{{$personee->firstname}}</br>
-								</div>	
-							</div>
-						</div>
-					@endforeach
-			@else
-				<a href="{{url('personaldetails/create')}}">Add Personal Details?</a>
-			@endif
-
-			{{--  Contacts--}}
-			@if($cont->count()>0)
-				@foreach($cont as $contee)
-				<div class="col-md-8 col-md-offset-2">
-					<div class="panel panel-default">
-						<div class="panel-heading">Contacts</div>
-						<div class="panel-body">
-							<strong>Phone Number:</strong>{{$contee->phonenumber}}</br>
-							<strong>Email:</strong>{{$contee->myemail->email}}</br>
-							<strong>Address:</strong>{{$contee->address}}</br>
-						</div>	
-					</div>
-				</div>
-				@endforeach
-			@else
-				<a href="{{url('contacts/create')}}">Add Contacts Details?</a>
-			@endif
-
+			@include('personaldetails._form')
 		</div>
+
+		<div class="row">
+			{{--  Contacts--}}
+			@include('contacts._form')
+		</div>
+		
 		<div class="row">
 			{{--Educations  --}}
 			<div class="col-md-3 col-md-offset-2">
@@ -157,7 +124,13 @@
 		</div>
 
 		<div class="row">
+			{{--Experiences--}}
 			@include('experience._form')
+		</div>
+
+		<div class="row">
+			{{--Interests--}}
+			@include('interests._form')
 		</div>
 	</div>
 

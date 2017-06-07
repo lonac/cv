@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Auth;
+
+use App\Interests;
+
 class InterestsController extends Controller
 {
     /**
@@ -23,7 +27,8 @@ class InterestsController extends Controller
      */
     public function create()
     {
-        //
+            return view('interests.create');
+
     }
 
     /**
@@ -34,7 +39,17 @@ class InterestsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = Auth::user();
+
+        $intr = new Interests;
+        $intr->interest = $request->input('interest');
+        $intr->user_id = $user->id;
+
+        $intr->save();
+
+        $int = $user->interests;
+
+        return view('interests.show',compact('int'));
     }
 
     /**
@@ -45,7 +60,10 @@ class InterestsController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = Auth::user();
+           $int = $user->interests;
+           
+        return view('interests.show',compact('int'));
     }
 
     /**
