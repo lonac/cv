@@ -62,7 +62,7 @@ class OlevelController extends Controller
     public function show()
     {
         $user = Auth::user();
-           $ol = $user->olevels;
+        $ol = $user->olevels;
 
         return view('olevel.show',compact('ol'));
     }

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Auth;
+
 class EducationDetailsController extends Controller
 {
     /**
@@ -45,7 +47,10 @@ class EducationDetailsController extends Controller
      */
     public function show()
     {
-       return view('educationdetails.show');
+        $user = Auth::user();
+        $ol = $user->olevels;
+        $cl = $user->certificatelevels;
+       return view('educationdetails.show',compact('ol','cl'));
     }
 
     /**

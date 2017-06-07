@@ -1,21 +1,8 @@
-@extends('layout.master')
-
-@section('title','Education Details')
-
-@section('content')
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6">
-				<div class="panel panel-inverse">
-					<div class="panel-heading">Education Qualifications:</div>
-					<div class="panel-body">
-						show me
-					</div>
-				</div>
-			</div>
+<div class="col-md-8 col-md-offset-2">
+	<div class="panel panel-inverse">
+		<div class="panel-heading">Education Qualifications:</div>
+		<div class="panel-body">
 
 		</div>
-
 	</div>
-
-@endsection
+</div>

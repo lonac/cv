@@ -8,15 +8,14 @@
 			{{--  Personal--}}
 			@include('personaldetails._form')
 		</div>
-
+		{{--  Contacts--}}
 		<div class="row">
-			{{--  Contacts--}}
 			@include('contacts._form')
 		</div>
 
 			{{--Ordinary level--}}
 			<div class="row">
-				@include('olevel._form');
+				@include('olevel._form')
 			</div>
 
 			{{--Advanced Level --}}
@@ -30,71 +29,34 @@
 			</div>
 
 			{{-- Diploma --}}
-			@if($dl->count()>0)
-				@foreach($dl as $dlee)
-					<div class="col-md-8 col-md-offset-2">
-						<div class="panel panel-default">
-							<div class="panel-heading">Ordinary Level</div>
-							<div class="panel-body">
-								<strong>College Name:</strong>{{$dlee->colname}}
-							</div>	
-						</div>
-					</div>
-				@endforeach
-			@endif
+			<div class="row">
+				@include('dlevel._form')
+			</div>
 
 			{{-- Degree --}}
-			@if($dgl->count()>0)
-				@foreach($dgl as $dglee)
-					<div class="col-md-8 col-md-offset-2">
-						<div class="panel panel-default">
-							<div class="panel-heading">Degree Level</div>
-							<div class="panel-body">
-								<strong>University:</strong>{{$dglee->uniname}}
-							</div>	
-						</div>
-					</div>
-				@endforeach
-			@endif
+			<div class="row">
+				@include('dglevel._form')
+			</div>
 
 			{{-- Masters--}}
-			@if($ml->count()>0)
-				@foreach($ml as $mlee)
-					<div class="col-md-8 col-md-offset-2">
-						<div class="panel panel-default">
-							<div class="panel-heading">Masters Level</div>
-							<div class="panel-body">
-								<strong>University:</strong>{{$mlee->uniname}}
-							</div>	
-						</div>
-					</div>
-				@endforeach
-			@endif
+			<div class="row">
+				@include('mlevel._form')
+			</div>
 
 			{{-- Doctorial --}}
-			@if($pl->count()>0)
-				@foreach($pl as $plee)
-					<div class="col-md-8 col-md-offset-2">
-						<div class="panel panel-default">
-							<div class="panel-heading">Doctorial Level</div>
-							<div class="panel-body">
-								<strong>University:</strong>{{$plee->uniname}}
-							</div>	
-						</div>
-					</div>
-				@endforeach
-			@endif
+			<div class="row">
+				@include('plevel._form');
+			</div>
 
+			<div class="row">
+				@include('interests._form')
+			</div>
 
-		<div class="row">
 			{{--Experiences--}}
-			@include('experience._form')
-		</div>
+			<div class="row">	
+				@include('experience._form')
+			</div>
 
-		<div class="row">
-			{{--Interests--}}
-			@include('interests._form')
-		</div>
 	</div>
 
 @endsection
