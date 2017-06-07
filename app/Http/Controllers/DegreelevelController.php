@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use Auth;
 
-use App\Masterslevel;
+use App\Degreelevel;
 
 class DegreelevelController extends Controller
 {
@@ -40,7 +40,7 @@ class DegreelevelController extends Controller
     {
         $user = Auth::user();
 
-                $dglev = new Masterslevel;
+                $dglev = new Degreelevel;
                 $dglev->uniname = $request->input('uniname');
                 $dglev->dgyear = $request->input('dgyear');
                 $dglev->program = $request->input('program');
@@ -48,7 +48,7 @@ class DegreelevelController extends Controller
 
                 $dglev->save();
 
-                $dgl = $user->masterslevels;
+                $dgl = $user->degreelevels;
 
                 return view('dglevel.show',compact('dgl'));
     }
@@ -62,7 +62,7 @@ class DegreelevelController extends Controller
     public function show()
     {
         $user = Auth::user();
-           $dgl = $user->masterslevels;
+           $dgl = $user->degreelevels;
 
         return view('dglevel.show',compact('dgl'));
     }

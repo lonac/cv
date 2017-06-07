@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Auth;
+
+use App\Phdlevel;
+
 class PhdlevelController extends Controller
 {
     /**
@@ -23,7 +27,8 @@ class PhdlevelController extends Controller
      */
     public function create()
     {
-        //
+                return view('plevel.create');
+
     }
 
     /**
@@ -34,7 +39,19 @@ class PhdlevelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = Auth::user();
+
+                $plev = new Phdlevel;
+                $plev->uniname = $request->input('uniname');
+                $plev->pyear = $request->input('pyear');
+                $plev->program = $request->input('program');
+                $plev->user_id = $user->id;
+
+                $plev->save();
+
+                $pl = $user->phdlevels;
+
+                return view('plevel.show',compact('pl'));
     }
 
     /**
@@ -43,9 +60,12 @@ class PhdlevelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $user = Auth::user();
+           $pl = $user->phdlevels;
+
+             return view('plevel.show',compact('pl'));
     }
 
     /**
