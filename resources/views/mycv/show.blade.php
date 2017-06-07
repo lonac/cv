@@ -24,19 +24,10 @@
 				@include('alevel._form')
 			</div>
 
-			{{-- Certificates--}>
-			@if($cl->count()>0)
-				@foreach($cl as $clee)
-					<div class="col-md-8 col-md-offset-2">
-						<div class="panel panel-default">
-							<div class="panel-heading">Certificate Level</div>
-							<div class="panel-body">
-								<strong>College Secondary:</strong>{{$clee->colname}}
-							</div>	
-						</div>
-					</div>
-				@endforeach
-			@endif
+			{{-- Certificates--}}
+			<div class="row">
+				@include('clevel._form')
+			</div>
 
 			{{-- Diploma --}}
 			@if($dl->count()>0)
