@@ -63,3 +63,5 @@ Route::get('plevel/create','PhdlevelController@create');
 Route::post('plevel/create','PhdlevelController@store');
 Route::get('plevel/show','PhdlevelController@show');
 
+//Mycv
+Route::get('mycv/show','MycvController@index');
