@@ -13,43 +13,16 @@
 			{{--  Contacts--}}
 			@include('contacts._form')
 		</div>
-		
-		<div class="row">
-			{{--Educations  --}}
-			<div class="col-md-3 col-md-offset-2">
-				<div class="panel panel-inverse">
-					<div class="panel-heading"><strong>
-						Education Qualifications:</strong></div>	
-				</div>
-			</div>
 
 			{{--Ordinary level--}}
-			@if($ol->count()>0)
-				@foreach($ol as $olee)
-					<div class="col-md-8 col-md-offset-2">
-						<div class="panel panel-default">
-							<div class="panel-heading">Ordinary Level</div>
-							<div class="panel-body">
-								<strong>O-Level Secondary:</strong>{{$olee->olname}}
-							</div>	
-						</div>
-					</div>
-				@endforeach
-			@endif
+			<div class="row">
+				@include('olevel._form');
+			</div>
 
 			{{--Advanced Level --}}
-			@if($al->count()>0)
-				@foreach($al as $alee)
-					<div class="col-md-8 col-md-offset-2">
-						<div class="panel panel-default">
-							<div class="panel-heading">Advanced Level</div>
-							<div class="panel-body">
-								<strong>O-Level Secondary:</strong>{{$alee->alname}}
-							</div>	
-						</div>
-					</div>
-				@endforeach
-			@endif
+			<div class="row">
+				@include('alevel._form')
+			</div>
 
 			{{-- Certificates--}>
 			@if($cl->count()>0)
@@ -121,7 +94,6 @@
 				@endforeach
 			@endif
 
-		</div>
 
 		<div class="row">
 			{{--Experiences--}}
