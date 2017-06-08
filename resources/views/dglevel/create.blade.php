@@ -29,7 +29,7 @@
 						<div class="form-group">
                             <label for="program" class="col-md-4 control-label">Program:</label>
                             <div class="col-md-6">
-                                <input id="program" type="text" class="form-control" name="program" placeholder="Diploma in ICT">
+                                <input id="program" type="text" class="form-control" name="program" placeholder="Bachelor in Science Technology">
                         	</div>
 						</div>
                    			<button type="submit" class="btn btn-success">SAVE</button>

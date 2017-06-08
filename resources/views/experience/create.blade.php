@@ -26,7 +26,7 @@
                                 <input id="role" type="text" class="form-control" name="role" placeholder="Worked As">
                         	</div>
 						</div>
-                   			<button type="submit" class="btn btn-success">Create</button>
+                   			<button type="submit" class="btn btn-success">SAVE</button>
                    			<a href="{{url('interests/create')}}" class="btn btn-success" role="button">NEXT</a>
 						</div>
 							</form>

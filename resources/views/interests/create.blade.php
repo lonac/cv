@@ -20,7 +20,7 @@
                                 <input id="interests" type="text" class="form-control" name="interest" required autofocus>
                         	</div>
 						</div>
-                   			<button type="submit" class="btn btn-success">Create</button>
+                   			<button type="submit" class="btn btn-success">SAVE</button>
                    			    <a href="{{url('mycv/show')}}" class="btn btn-success" role="button">DONE</a>
 						</div>
 							</form>
