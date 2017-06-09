@@ -98,4 +98,9 @@ class User extends Authenticatable
         return $this->hasMany('App\Proffesionalaffliation');
     }
 
+    public function awards()
+    {
+        return $this->hasMany('App\Award');
+    }
+
 }

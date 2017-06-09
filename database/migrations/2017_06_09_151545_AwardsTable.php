@@ -13,7 +13,14 @@ class AwardsTable extends Migration
      */
     public function up()
     {
-        //
+         Schema::create('awards',function( Blueprint $table){
+                $table->increments('id');
+                $table->integer('user_id')->unsigned()->index();
+                $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade');
+                $table->string('name');
+                $table->string('date');
+                $table->timestamps();
+            });
     }
 
     /**
@@ -23,6 +30,7 @@ class AwardsTable extends Migration
      */
     public function down()
     {
-        //
+                 Schema::dropIfExists('awards');
+
     }
 }

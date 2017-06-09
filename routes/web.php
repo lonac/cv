@@ -103,3 +103,7 @@ Route::get('professionalaffiliation/create','ProfessionalAffliationController@cr
 Route::post('professionalaffiliation/create','ProfessionalAffliationController@store');
 Route::get('professionalaffiliation/show','ProfessionalAffliationController@show');
 
+//awards
+Route::get('awards/create','AwardsController@create');
+Route::post('awards/create','AwardsController@store');
+Route::get('awards/show','AwardsController@show');

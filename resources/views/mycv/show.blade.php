@@ -73,8 +73,10 @@
 			</div>
 
 			{{--Professional afflication--}}
+
+			{{--Research--}}
 			<div class="row">
-				@include('professionalaffiliation._form')
+				@include('awards._form')
 			</div>
 
 			

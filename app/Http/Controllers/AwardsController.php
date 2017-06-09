@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Auth;
+
+use App\Award;
+
 class AwardsController extends Controller
 {
     /**
@@ -23,7 +27,9 @@ class AwardsController extends Controller
      */
     public function create()
     {
-        //
+    
+       return view('awards.create');
+
     }
 
     /**
@@ -34,7 +40,18 @@ class AwardsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = Auth::user();
+
+        $awad = new Award;
+        $awad->date = $request->input('date');
+        $awad->name = $request->input('name');
+        $awad->user_id = $user->id;
+
+        $awad->save();
+
+        $aw = $user->awards;
+
+        return view('awards.create',compact('aw'));
     }
 
     /**
@@ -43,9 +60,12 @@ class AwardsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $user = Auth::user();
+           $aw = $user->awards;
+           
+        return view('awards.show',compact('aw'));
     }
 
     /**
