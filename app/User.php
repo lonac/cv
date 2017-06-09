@@ -103,4 +103,9 @@ class User extends Authenticatable
         return $this->hasMany('App\Award');
     }
 
+     public function affiliations()
+    {
+        return $this->hasMany('App\Affiliations');
+    }
+
 }

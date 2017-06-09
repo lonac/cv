@@ -30,7 +30,7 @@ class MycvController extends Controller
         $sk = $user->skills;
         $rf = $user->referees;
         $rs = $user->researches;
-        $pa = $user->proffessionalaffliations;
+        $pa = $user->affiliations;
         $aw = $user->awards;
 
         return view('mycv.show',compact('cont','pers','ol','al',

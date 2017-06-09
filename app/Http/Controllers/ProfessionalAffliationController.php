@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use Auth;
 
-use App\Proffesionalaffliation;
+use App\Affiliations;
 
 class ProfessionalAffliationController extends Controller
 {
@@ -41,13 +41,13 @@ class ProfessionalAffliationController extends Controller
     {
        $user = Auth::user();
 
-        $pa = new Proffesionalaffliation;
+        $pa = new Affiliations;
         $pa->name = $request->input('name');
         $pa->user_id = $user->id;
 
         $pa->save();
 
-        $pa = $user->proffessionalaffliations;
+        $pa = $user->affiliations;
 
         return view('professionalaffiliation.create',compact('pa'));
     }
@@ -62,7 +62,7 @@ class ProfessionalAffliationController extends Controller
     {
        $user = Auth::user();
 
-           $pa = $user->proffessionalaffliations;
+           $pa = $user->affiliations;
 
            
         return view('professionalaffiliation.show',compact('pa'));

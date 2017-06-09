@@ -4,9 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Proffesionalaffliation extends Model
+class Affiliations extends Model
 {
-protected $fillable =['user_id','name',];
+   
+    protected $fillable =['user_id','name',];
 
     public function user()
     {
