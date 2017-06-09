@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Auth;
+
+use App\Research;
+
 class ResearchesController extends Controller
 {
     /**
@@ -23,7 +27,9 @@ class ResearchesController extends Controller
      */
     public function create()
     {
-        //
+    
+        return view('research.create');
+
     }
 
     /**
@@ -34,7 +40,18 @@ class ResearchesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $user = Auth::user();
+
+        $rs = new Research;
+        $rs->name = $request->input('name');
+        $rs->description = $request->input('description');
+        $rs->user_id = $user->id;
+
+        $rs->save();
+
+        $rs = $user->researches;
+
+        return view('research.create',compact('rs'));
     }
 
     /**
@@ -43,9 +60,14 @@ class ResearchesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $user = Auth::user();
+
+           $rs = $user->researches;
+
+           
+        return view('research.show',compact('rs'));
     }
 
     /**

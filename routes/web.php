@@ -92,5 +92,9 @@ Route::get('referees/create','RefereesController@create');
 Route::post('referees/create','RefereesController@store');
 Route::get('referees/show','RefereesController@show');
 
+//researches
+Route::get('research/create','ResearchesController@create');
+Route::post('research/create','ResearchesController@store');
+Route::get('research/show','ResearchesController@show');
 
 

@@ -29,9 +29,10 @@ class MycvController extends Controller
         $int = $user->interests;
         $sk = $user->skills;
         $rf = $user->referees;
+         $rs = $user->researches;
 
         return view('mycv.show',compact('cont','pers','ol','al',
-            'cl','dl','dgl','ml','pl','ex','int','sk','rf'));
+            'cl','dl','dgl','ml','pl','ex','int','sk','rf','rs'));
     }
 
     /**
