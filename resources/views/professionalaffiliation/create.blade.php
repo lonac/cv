@@ -22,7 +22,7 @@
 						</div>
 						</div>
                    			<button type="submit" class="btn btn-success">SAVE</button>
-                   			    <a href="{{url('mycv/show')}}" class="btn btn-success" role="button">DONE</a>
+                   			    <a href="{{url('awards/create')}}" class="btn btn-success" role="button">NEXT</a>
 						</div>
 							</form>
 							
