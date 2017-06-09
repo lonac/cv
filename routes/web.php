@@ -98,3 +98,8 @@ Route::post('research/create','ResearchesController@store');
 Route::get('research/show','ResearchesController@show');
 
 
+//professional affliations
+Route::get('professionalaffiliation/create','ProfessionalAffliationController@create');
+Route::post('professionalaffiliation/create','ProfessionalAffliationController@store');
+Route::get('professionalaffiliation/show','ProfessionalAffliationController@show');
+

@@ -13,7 +13,13 @@ class ProfessionalaffliationTable extends Migration
      */
     public function up()
     {
-        //
+       Schema::create('proffessionalaffliations',function( Blueprint $table){
+                $table->increments('id');
+                $table->integer('user_id')->unsigned()->index();
+                $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade');
+                $table->string('name');
+                $table->timestamps();
+            });
     }
 
     /**
@@ -23,6 +29,7 @@ class ProfessionalaffliationTable extends Migration
      */
     public function down()
     {
-        //
+                Schema::dropIfExists('proffessionalaffliations');
+
     }
 }

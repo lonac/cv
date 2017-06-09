@@ -72,6 +72,11 @@
 				@include('research._form')
 			</div>
 
+			{{--Professional afflication--}}
+			<div class="row">
+				@include('professionalaffiliation._form')
+			</div>
+
 			
 
 	</div>

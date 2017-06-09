@@ -4,11 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Auth;
-
-use App\Proffesionalaffliation;
-
-class ProfessionalAffliationController extends Controller
+class AwardsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,8 +23,7 @@ class ProfessionalAffliationController extends Controller
      */
     public function create()
     {
-         return view('professionalaffiliation.create');
-
+        //
     }
 
     /**
@@ -39,17 +34,7 @@ class ProfessionalAffliationController extends Controller
      */
     public function store(Request $request)
     {
-       $user = Auth::user();
-
-        $pa = new Proffesionalaffliation;
-        $pa->name = $request->input('name');
-        $pa->user_id = $user->id;
-
-        $pa->save();
-
-        $pa = $user->proffessionalaffliations;
-
-        return view('professionalaffiliation.create',compact('pa'));
+        //
     }
 
     /**
@@ -58,14 +43,9 @@ class ProfessionalAffliationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
-       $user = Auth::user();
-
-           $pa = $user->proffessionalaffliations;
-
-           
-        return view('professionalaffiliation.show',compact('pa'));
+        //
     }
 
     /**

@@ -93,5 +93,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Research');
     }
+    public function professionalaffiliations()
+    {
+        return $this->hasMany('App\Proffesionalaffliation');
+    }
 
 }
