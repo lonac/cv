@@ -62,6 +62,12 @@
 				@include('skills._form')
 			</div>
 
+			{{--fereees--}}
+			{{--skills--}}
+			<div class="row">
+				@include('referees._form')
+			</div>
+
 			
 
 	</div>

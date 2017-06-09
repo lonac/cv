@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Auth;
+
+use App\Referees;
+
 class RefereesController extends Controller
 {
     /**
@@ -23,7 +27,7 @@ class RefereesController extends Controller
      */
     public function create()
     {
-        //
+       return view('referees.create');
     }
 
     /**
@@ -34,7 +38,19 @@ class RefereesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = Auth::user();
+
+        $rf = new Referees;
+        $rf->refaname = $request->input('refaname');
+        $rf->title = $request->input('title');
+        $rf->address = $request->input('address');
+        $rf->user_id = $user->id;
+
+        $rf->save();
+
+        $rf = $user->referees;
+
+        return view('referees.create',compact('rf'));
     }
 
     /**
@@ -43,9 +59,12 @@ class RefereesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $user = Auth::user();
+           $rf = $user->referees;
+           
+        return view('referees.show',compact('rf'));
     }
 
     /**

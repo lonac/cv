@@ -87,3 +87,10 @@ Route::get('skills/create','SkillsController@create');
 Route::post('skills/create','SkillsController@store');
 Route::get('skills/show','SkillsController@show');
 
+//referees
+Route::get('referees/create','RefereesController@create');
+Route::post('referees/create','RefereesController@store');
+Route::get('referees/show','RefereesController@show');
+
+
+
