@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Auth;
+
+use App\Skills;
+
 class SkillsController extends Controller
 {
     /**
@@ -23,7 +27,8 @@ class SkillsController extends Controller
      */
     public function create()
     {
-        //
+      return view('skills.create');
+
     }
 
     /**
@@ -34,7 +39,18 @@ class SkillsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+     $user = Auth::user();
+
+        $sk = new Skills;
+        $sk->skillname = $request->input('skillname');
+        $sk->description = $request->input('description');
+        $sk->user_id = $user->id;
+
+        $sk->save();
+
+        $sk = $user->skills;
+
+        return view('skills.create',compact('sk'));
     }
 
     /**
@@ -43,9 +59,12 @@ class SkillsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $user = Auth::user();
+           $sk = $user->skills;
+           
+        return view('skills.show',compact('sk'));
     }
 
     /**

@@ -80,4 +80,9 @@ class User extends Authenticatable
         return $this->hasMany('App\Interests');
     }
 
+    public function skills()
+    {
+        return $this->hasMany('App\Skills');
+    }
+
 }

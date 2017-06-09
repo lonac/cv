@@ -82,4 +82,8 @@ Route::get('interests/create','InterestsController@create');
 Route::post('interests/create','InterestsController@store');
 Route::get('interests/show','InterestsController@show');
 
+//skills
+Route::get('skills/create','SkillsController@create');
+Route::post('skills/create','SkillsController@store');
+Route::get('skills/show','SkillsController@show');
 

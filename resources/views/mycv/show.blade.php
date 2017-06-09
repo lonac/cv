@@ -57,6 +57,11 @@
 				@include('interests._form')
 			</div>
 
+			{{--skills--}}
+			<div class="row">
+				@include('skills._form')
+			</div>
+
 			
 
 	</div>

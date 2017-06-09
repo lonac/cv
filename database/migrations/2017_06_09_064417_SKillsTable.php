@@ -13,7 +13,14 @@ class SKillsTable extends Migration
      */
     public function up()
     {
-        //
+       Schema::create('skills',function( Blueprint $table){
+                $table->increments('id');
+                $table->integer('user_id')->unsigned()->index();
+                $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade');
+                $table->string('skillname');
+                $table->string('description');
+                $table->timestamps();
+            });
     }
 
     /**
@@ -23,6 +30,6 @@ class SKillsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('skills');
     }
 }
