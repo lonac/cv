@@ -33,7 +33,7 @@
 						</div>
 						
 						<div class="form-group">
-                            <label for="nationality" class="col-md-4 control-label">Nationality</label>
+                            <label for="nationality" class="col-md-4 control-label">Citizenship</label>
                             <div class="col-md-6">
                                 <input id="nationality" type="text" class="form-control" name="nationality" required autofocus>
                         	</div>

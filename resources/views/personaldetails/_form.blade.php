@@ -7,7 +7,7 @@
 					<strong>Firstname :</strong>{{$personee->firstname}}</br>
 					<strong>Middlename:</strong>{{$personee->middlename}}</br>
 					<strong>Lastname :</strong>{{$personee->lastname}}</br>
-					<strong>Nationality :</strong>{{$personee->nationality}}</br>
+					<strong>Citizenship :</strong>{{$personee->nationality}}</br>
 					<strong>Birthdate:</strong>{{$personee->birthdate}}</br>
 				@endforeach
 			@else
