@@ -27,7 +27,7 @@
                         	</div>
 						</div>
                    			<button type="submit" class="btn btn-success">SAVE</button>
-                   			    <a href="{{url('mycv/show')}}" class="btn btn-success" role="button">NEXT</a>
+                   			    <a href="{{url('projects/create')}}" class="btn btn-success" role="button">NEXT</a>
 						</div>
 							</form>
 							

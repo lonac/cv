@@ -51,7 +51,7 @@ class AlevelController extends Controller
 
                 $al = $user->alevels;
 
-                return view('alevel.create',compact('al'));
+                return view('dlevel.create',compact('al'));
     }
 
     /**
