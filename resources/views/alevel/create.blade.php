@@ -7,14 +7,14 @@
 		<div class="row">
 			<div class="col-md-6 col-md-offset-2">
 				<div class="panel panel-inverse">
-					<div class="panel-heading">Add Olevel Details:</div>
+					<div class="panel-heading">Add Advance/High School Details:</div>
 					<div class="panel-body">
 						<form method="POST" action="{{ url('alevel/create') }}">
 
 						{{ csrf_field() }}
 
 						 <div class="form-group">
-                            <label for="alevname" class="col-md-4 control-label">A-level School Name:</label>
+                            <label for="alevname" class="col-md-4 control-label">School/College Name:</label>
                             <div class="col-md-6">
                                 <input id="alevname" type="text" class="form-control" name="alevname" required autofocus>
                         	</div>
