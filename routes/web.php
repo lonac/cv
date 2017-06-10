@@ -107,3 +107,8 @@ Route::get('professionalaffiliation/show','ProfessionalAffliationController@show
 Route::get('awards/create','AwardsController@create');
 Route::post('awards/create','AwardsController@store');
 Route::get('awards/show','AwardsController@show');
+
+//job descriptions
+Route::get('jobdesc/create','JobdescriptionController@create');
+Route::post('jobdesc/create','JobdescriptionController@store');
+Route::get('jobdesc/show','JobdescriptionController@show');

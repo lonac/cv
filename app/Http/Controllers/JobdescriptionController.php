@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Auth;
+
+use App\Jobdescription;
+
 class JobdescriptionController extends Controller
 {
     /**
@@ -23,7 +27,7 @@ class JobdescriptionController extends Controller
      */
     public function create()
     {
-        //
+       return view('jobdesc.create');
     }
 
     /**
@@ -34,7 +38,18 @@ class JobdescriptionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $user = Auth::user();
+
+        $jd = new Jobdescription;
+        $jd->title = $request->input('title');
+        $jd->description = $request->input('description');
+        $jd->user_id = $user->id;
+
+        $jd->save();
+
+        $jd = $user->jobdescriptions;
+
+        return view('jobdesc.create',compact('jd'));
     }
 
     /**
@@ -43,9 +58,12 @@ class JobdescriptionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+      $user = Auth::user();
+           $jd = $user->jobdescriptions;
+           
+        return view('jobdesc.show',compact('jd'));
     }
 
     /**

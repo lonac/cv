@@ -82,7 +82,10 @@
 				@include('awards._form')
 			</div>
 
-			
+			{{--jobdescriptions--}}
+			<div class="row">
+				@include('jobdesc._form')
+			</div>
 
 	</div>
 
