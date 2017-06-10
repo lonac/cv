@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 
 use Auth;
 
-class MycvController extends Controller
+use App\Activities;
+
+class OtherActivitiesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,31 +17,7 @@ class MycvController extends Controller
      */
     public function index()
     {
-        $user= Auth::user();
-        $cont = $user->contacts;
-        $pers = $user->personaldetails;
-        $ol = $user->olevels;
-        $al = $user->alevels;
-        $cl = $user->certificatelevels;
-        $dl = $user->diplomalevels;
-        $dgl = $user->degreelevels;
-        $ml = $user->masterslevels;
-        $pl = $user->phdlevels;
-        $ex = $user->experiences;
-        $int = $user->interests;
-        $sk = $user->skills;
-        $rf = $user->referees;
-        $rs = $user->researches;
-        $pa = $user->affiliations;
-        $aw = $user->awards;
-        $jd = $user->jobdescriptions;
-        $pr = $user->projects;
-        $pt = $user->trainings;
-        $acp = $user->presentations;
-        $act = $user->activities;
-
-        return view('mycv.show',compact('cont','pers','ol','al','pt','acp','act',
-            'cl','dl','dgl','ml','pl','ex','int','sk','rf','rs','pa','aw','jd','pr'));
+        //
     }
 
     /**
@@ -49,7 +27,7 @@ class MycvController extends Controller
      */
     public function create()
     {
-        //
+      return view('activities.create');
     }
 
     /**
@@ -60,7 +38,17 @@ class MycvController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = Auth::user();
+
+        $actvty = new Activities;
+        $actvty->description = $request->input('description');
+        $actvty->user_id = $user->id;
+
+        $actvty->save();
+
+        $act = $user->activities;
+
+        return view('activities.create',compact('act'));
     }
 
     /**
@@ -69,9 +57,12 @@ class MycvController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+       $user = Auth::user();
+           $act = $user->activities;
+           
+        return view('activities.show',compact('act'));
     }
 
     /**

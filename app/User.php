@@ -127,5 +127,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Presentations');
     }
+     public function activities()
+    {
+        return $this->hasMany('App\Activities');
+    }
 
 }

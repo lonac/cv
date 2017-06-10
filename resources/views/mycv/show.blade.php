@@ -102,6 +102,11 @@
 				@include('presentation._form')
 			</div>
 
+			{{--Activities--}}
+			<div class="row">
+				@include('activities._form')
+			</div>
+
 	</div>
 
 @endsection
