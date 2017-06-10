@@ -4,11 +4,13 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-6 col-md-offset-1">
+        <div class="col-md-6 col-md-offset-2">
             <div class="panel panel-inverse">
-                <div class="panel-heading">CV-CREATOR</div>
+                <div class="panel-heading"><strong>CURRICULUM VITAE (CV):</strong></div>
                 <div class="panel-body">
-                	<a href="{{url('mycv/show')}}" role="button" class="btn btn-primary">Mycv</a>       
+                	<a href="{{url('mycv/show')}}" role="button" class="btn btn-primary">VIEW</a>  
+                    <a href="#" role="button" class="btn btn-primary">EDIT</a> 
+                    <a href="#" role="button" class="btn btn-danger">DELETE</a>      
                 </div>
             </div>
         </div>

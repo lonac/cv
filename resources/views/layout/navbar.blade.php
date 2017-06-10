@@ -1,5 +1,5 @@
 <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
+    <div class="container-default">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -14,7 +14,8 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" background-color="blue">
             <ul class="nav navbar-nav navbar-left">
-                <li><a href="/home">Mycv</a></li>
+                <li><a href="/home">MYCV</a></li>
+                <li><a href="/about">ABOUT</a></li>
             </ul>
 
                     <ul class="nav navbar-nav navbar-right">

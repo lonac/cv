@@ -9,6 +9,7 @@ ul li {
     list-style-type: none;
     float: left;
 }
+
  
 ul li a i {
     background: #205D7A;
@@ -71,12 +72,7 @@ ul li a i:hover {
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4 col-md-offset-4">
-                <div class="form-group">
-                    <input type="email" placeholder="E-mail Here">
-                    <button class="btn btn-primary">SUBSCRIBE</button>
-                </div>
-            </div>    
+            {{--subsriber arena--}}   
         </div>
          <div class="row">
             <div class="col-md-10">

@@ -25,7 +25,7 @@
     @yield('content')
 
     <footer class="row">
-      @include('layout.footer')
+     {{--@include('layout.footer')--}} 
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
