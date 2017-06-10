@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 
 use Auth;
 
-class MycvController extends Controller
+use App\Presentations;
+
+class PresentationsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,30 +17,7 @@ class MycvController extends Controller
      */
     public function index()
     {
-        $user= Auth::user();
-        $cont = $user->contacts;
-        $pers = $user->personaldetails;
-        $ol = $user->olevels;
-        $al = $user->alevels;
-        $cl = $user->certificatelevels;
-        $dl = $user->diplomalevels;
-        $dgl = $user->degreelevels;
-        $ml = $user->masterslevels;
-        $pl = $user->phdlevels;
-        $ex = $user->experiences;
-        $int = $user->interests;
-        $sk = $user->skills;
-        $rf = $user->referees;
-        $rs = $user->researches;
-        $pa = $user->affiliations;
-        $aw = $user->awards;
-        $jd = $user->jobdescriptions;
-        $pr = $user->projects;
-        $pt = $user->trainings;
-        $acp = $user->presentations;
-
-        return view('mycv.show',compact('cont','pers','ol','al','pt','acp',
-            'cl','dl','dgl','ml','pl','ex','int','sk','rf','rs','pa','aw','jd','pr'));
+        //
     }
 
     /**
@@ -48,7 +27,7 @@ class MycvController extends Controller
      */
     public function create()
     {
-        //
+        return view('presentation.create');
     }
 
     /**
@@ -59,7 +38,18 @@ class MycvController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = Auth::user();
+
+        $presents = new Presentations;
+        $presents->date = $request->input('date');
+        $presents->description = $request->input('description');
+        $presents->user_id = $user->id;
+
+        $presents->save();
+
+        $acp = $user->presentations;
+
+        return view('presentation.create',compact('acp'));
     }
 
     /**
@@ -68,9 +58,12 @@ class MycvController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+       $user = Auth::user();
+           $acp = $user->presentations;
+           
+        return view('presentation.show',compact('acp'));
     }
 
     /**

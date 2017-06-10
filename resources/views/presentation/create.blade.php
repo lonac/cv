@@ -1,16 +1,16 @@
 @extends('layout.master')
 
-@section('title','Professional Trainings')
+@section('title','Academic presentations')
 
 @section('content')						
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 col-md-offset-2">
 				<div class="panel panel-inverse">
-					<div class="panel-heading">Professional Trainings:</div>
+					<div class="panel-heading">Academic Presentations:</div>
 					<div class="panel-body">
 
-						<form method="POST" action="{{ url('trainings/create') }}">
+						<form method="POST" action="{{ url('presentation/create') }}">
 
 						{{ csrf_field() }}
 
@@ -27,7 +27,7 @@
                         	</div>
 						</div>
                    			<button type="submit" class="btn btn-success">SAVE</button>
-                   			    <a href="{{url('presentation/create')}}" class="btn btn-success" role="button">NEXT</a>
+                   			    <a href="{{url('mycv/show')}}" class="btn btn-success" role="button">DONE</a>
 						</div>
 							</form>
 							

@@ -97,6 +97,11 @@
 				@include('trainings._form')
 			</div>
 
+			{{--Academic presentations--}}
+			<div class="row">
+				@include('presentation._form')
+			</div>
+
 	</div>
 
 @endsection

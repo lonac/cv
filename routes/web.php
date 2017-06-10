@@ -123,4 +123,9 @@ Route::get('trainings/create','TrainingsController@create');
 Route::post('trainings/create','TrainingsController@store');
 Route::get('trainings/show','TrainingsController@show');
 
+//academic presentations
+Route::get('presentation/create','PresentationsController@create');
+Route::post('presentation/create','PresentationsController@store');
+Route::get('presentation/show','PresentationsController@show');
+
 
