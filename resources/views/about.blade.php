@@ -11,7 +11,7 @@
 			<p>The CV-CREATOR intends to give you ability to add what is not described or dictated on this site</p>
 			<p>Based on the fact that, there are so many styles or types of writing CVs. The CV-CREATORS will try
 				to touch every style as much as possible</p
-				<p><b>ALWAYS CONTACTS</b> with the Official site management to add or remove some uncessary(remove) and
+				<p><b>ALWAYS CONTACTS</b> with the Official site management to add or remove some unnecessaries and
 					add important value.</p>
 
 			</div>
