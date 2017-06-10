@@ -117,3 +117,10 @@ Route::get('jobdesc/show','JobdescriptionController@show');
 Route::get('projects/create','ProjectsController@create');
 Route::post('projects/create','ProjectsController@store');
 Route::get('projects/show','ProjectsController@show');
+
+//professional trainings
+Route::get('trainings/create','TrainingsController@create');
+Route::post('trainings/create','TrainingsController@store');
+Route::get('trainings/show','TrainingsController@show');
+
+

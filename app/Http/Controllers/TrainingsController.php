@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Auth;
+
+use App\Trainings;
+
 class TrainingsController extends Controller
 {
     /**
@@ -23,7 +27,8 @@ class TrainingsController extends Controller
      */
     public function create()
     {
-        //
+     return view('trainings.create');
+
     }
 
     /**
@@ -34,7 +39,18 @@ class TrainingsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = Auth::user();
+
+        $ptrains = new Trainings;
+        $ptrains->date = $request->input('date');
+        $ptrains->description = $request->input('description');
+        $ptrains->user_id = $user->id;
+
+        $ptrains->save();
+
+        $pt = $user->trainings;
+
+        return view('trainings.create',compact('pt'));
     }
 
     /**
@@ -43,9 +59,12 @@ class TrainingsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+      $user = Auth::user();
+           $pt = $user->trainings;
+           
+        return view('trainings.show',compact('pt'));
     }
 
     /**

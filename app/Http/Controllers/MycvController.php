@@ -34,8 +34,9 @@ class MycvController extends Controller
         $aw = $user->awards;
         $jd = $user->jobdescriptions;
         $pr = $user->projects;
+        $pt = $user->trainings;
 
-        return view('mycv.show',compact('cont','pers','ol','al',
+        return view('mycv.show',compact('cont','pers','ol','al','pt',
             'cl','dl','dgl','ml','pl','ex','int','sk','rf','rs','pa','aw','jd','pr'));
     }
 

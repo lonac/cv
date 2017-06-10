@@ -92,6 +92,11 @@
 				@include('projects._form')
 			</div>
 
+			{{--Professional Trainings--}}
+			<div class="row">
+				@include('trainings._form')
+			</div>
+
 	</div>
 
 @endsection
