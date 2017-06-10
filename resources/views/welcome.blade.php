@@ -21,7 +21,7 @@
 
         	<div class="row">
             <div class="col-sm-6 col-md-4">
-                <div class="panel panel-primary">
+                <div class="panel panel-inverse">
                     <div class="panel-body">
                         <div class="caption">
                             <h3>CREATE CV</h3>
@@ -36,7 +36,7 @@
             </div>
 
              <div class="col-sm-6 col-md-4">
-                <div class="panel panel-primary">
+                <div class="panel panel-inverse">
                     <div class="panel-body">
                         <div class="caption">
                             <h3>ACADEMIC</h3>
@@ -52,7 +52,7 @@
             </div>
 
              <div class="col-sm-6 col-md-4">
-                <div class="panel panel-primary">
+                <div class="panel panel-inverse">
                     <div class="panel-body">
                         <div class="caption">
                             <h3>ONLINE SCHOOL</h3>

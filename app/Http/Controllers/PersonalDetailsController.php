@@ -51,7 +51,7 @@ class PersonalDetailsController extends Controller
 
         $pers->save();
 
-        return view('personaldetails.create');
+        return view('contacts.create');
     }
 
     /**
