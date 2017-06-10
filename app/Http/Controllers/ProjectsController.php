@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Auth;
+
+use App\Projects;
+
 class ProjectsController extends Controller
 {
     /**
@@ -23,7 +27,8 @@ class ProjectsController extends Controller
      */
     public function create()
     {
-        //
+         return view('projects.create');
+
     }
 
     /**
@@ -34,7 +39,19 @@ class ProjectsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = Auth::user();
+
+        $pr = new Projects;
+        $pr->title = $request->input('title');
+        $pr->description = $request->input('description');
+        $pr->reference = $request->input('reference');
+        $pr->user_id = $user->id;
+
+        $pr->save();
+
+        $pr = $user->projects;
+
+        return view('projects.create',compact('pr'));
     }
 
     /**
@@ -43,9 +60,12 @@ class ProjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+       $user = Auth::user();
+           $pr = $user->projects;
+           
+        return view('projects.show',compact('pr'));
     }
 
     /**

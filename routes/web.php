@@ -108,7 +108,12 @@ Route::get('awards/create','AwardsController@create');
 Route::post('awards/create','AwardsController@store');
 Route::get('awards/show','AwardsController@show');
 
-//job descriptions
+//job descriptions ProjectsController
 Route::get('jobdesc/create','JobdescriptionController@create');
 Route::post('jobdesc/create','JobdescriptionController@store');
 Route::get('jobdesc/show','JobdescriptionController@show');
+
+//projects
+Route::get('projects/create','ProjectsController@create');
+Route::post('projects/create','ProjectsController@store');
+Route::get('projects/show','ProjectsController@show');

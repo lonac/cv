@@ -113,4 +113,9 @@ class User extends Authenticatable
         return $this->hasMany('App\Jobdescription');
     }
 
+     public function projects()
+    {
+        return $this->hasMany('App\Projects');
+    }
+
 }

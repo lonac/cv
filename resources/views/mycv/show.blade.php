@@ -87,6 +87,11 @@
 				@include('jobdesc._form')
 			</div>
 
+			{{--Projects--}}
+			<div class="row">
+				@include('projects._form')
+			</div>
+
 	</div>
 
 @endsection
