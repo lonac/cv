@@ -4,9 +4,9 @@
 		<div class="panel-heading"><strong>ORDINARY-LEVEL DETAILS:</strong></div>
 			<div class="panel-body">
 					@foreach($ol as $olee)
-					<strong>School Name:</strong>{{$olee->olname}}</br>
+					<strong>School Name:</strong>{{$olee->olevname}}</br>
 					<strong>Year of Study:</strong>{{$olee->oyear}}</br>
-					<strong>Remarks:{{$olee->remark}}</strong>
+					<strong>Remarks:</strong>{{$olee->remark}} </br>
 					@endforeach
 			@else
 			@endif
