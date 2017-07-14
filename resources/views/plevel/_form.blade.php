@@ -6,7 +6,7 @@
 				@foreach($pl as $plee)
 					<strong>University Name:</strong>{{$plee->uniname}}</br>
 					<strong>Year of Study:</strong>{{$plee->pyear}}</br>
-					<strong>Program:</strong>{{$plee->program}}
+					<strong>Program:</strong>{{$plee->program}} </br>
 				@endforeach
 			@else
 			@endif

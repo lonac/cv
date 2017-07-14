@@ -6,7 +6,7 @@
 			@foreach($dgl as $dglee)
 				<strong>University Name:</strong>{{$dglee->uniname}}</br>
 				<strong>Year of Study:</strong>{{$dglee->dgyear}}</br>
-				<strong>Program:</strong>{{$dglee->program}}
+				<strong>Program:</strong>{{$dglee->program}} </br>
 			@endforeach
 			@else
 			@endif

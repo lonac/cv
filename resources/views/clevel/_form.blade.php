@@ -6,7 +6,7 @@
 				@foreach($cl as $clee)
 					<strong>College Name:</strong>{{$clee->colname}}</br>
 					<strong>Year of Study:</strong>{{$clee->cyear}}</br>
-					<strong>Remarks:</strong>{{$clee->remark}}
+					<strong>Remarks:</strong>{{$clee->remark}} </br>
 				@endforeach
 			</div>
 		@else	

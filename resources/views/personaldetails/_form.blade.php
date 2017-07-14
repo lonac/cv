@@ -12,8 +12,13 @@
 					<strong>Birthdate:</strong>{{$personee->birthdate}}</br>
 				@endforeach
 			@else
+			<div class="col-md-6">
+			<h3>
 				<font color="red">No Personal Details so far!</font>
-				<a href="{{url('personaldetails/create')}}">Add Details?</a>
+			</h3>
+				<strong><a href="{{url('personaldetails/create')}}">Add Details?</a></strong>	
+			</div>
+			
 			@endif
 		</div>
 	</div>
