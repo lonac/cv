@@ -31,6 +31,16 @@
                                 <input id="lastname" type="text" class="form-control" name="lastname" required autofocus>
                         	</div>
 						</div>
+						<div class="form-group">
+							<label for="gender" class="col-md-4 control-label">Gender</label>
+							<div class="col-md-6">
+								<select name="gender" class="form-control">
+									<option>Select Gender</option>
+									<option value="male">Male</option>
+									<option value="female">Female</option>
+								</select>
+							</div>
+						</div>
 						
 						<div class="form-group">
                             <label for="nationality" class="col-md-4 control-label">Citizenship</label>
