@@ -20,6 +20,7 @@ class PersonalDetailsTable extends Migration
             $table->string('firstname');
             $table->string('middlename')->nullable();
             $table->string('lastname');
+            $table->string('gender');
             $table->date('birthdate');
             $table->string('nationality');
             $table->timestamps();

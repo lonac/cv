@@ -46,6 +46,7 @@ class PersonalDetailsController extends Controller
         $pers->middlename = $request->input('middlename');
         $pers->lastname = $request->input('lastname');
         $pers->user_id = $user->id;
+        $pers->gender =$request->input('gender');
         $pers->nationality = $request->input('nationality');
         $pers->birthdate = $request->input('birthdate');
 
