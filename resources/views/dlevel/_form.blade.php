@@ -6,7 +6,7 @@
 			@foreach($dl as $dlee)
 				<strong>College Name:</strong>{{$dlee->colname}}</br>
 				<strong>Year of Study:</strong>{{$dlee->dyear}}</br>
-				<strong>Program:</strong>{{$dlee->program}}
+				<strong>Program:</strong>{{$dlee->program}} </br>
 			@endforeach
 		@else
 		@endif
