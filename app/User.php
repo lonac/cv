@@ -132,4 +132,9 @@ class User extends Authenticatable
         return $this->hasMany('App\Activities');
     }
 
+    public function phonenumbers()
+    {
+        return $this->hasMany('App\Phonenumber');
+    }
+
 }

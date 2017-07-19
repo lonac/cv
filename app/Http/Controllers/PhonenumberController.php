@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Auth;
+
+use App\Phonenumber;
+
 class PhonenumberController extends Controller
 {
     /**
@@ -23,7 +27,7 @@ class PhonenumberController extends Controller
      */
     public function create()
     {
-        //
+        return view('phonenumbers/create');
     }
 
     /**
@@ -34,7 +38,16 @@ class PhonenumberController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = Auth::user();
+
+        $phone = new Phonenumber;
+        $phone->phonenumber = $request->input('phonenumber');
+        $phone->user_id = $user->id;
+
+        $phone->save();
+
+         return redirect('phonenumbers/create')->with('status','Phonenumber successfull added');
+
     }
 
     /**
@@ -45,7 +58,10 @@ class PhonenumberController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = Auth::user();
+        $myphonenumbers = $user->phonenumbers;
+
+      return view('phonenumbers.show',compact('myphonenumbers'));
     }
 
     /**

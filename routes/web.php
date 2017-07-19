@@ -22,6 +22,14 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/about','HomeController@about');
 
+//contacts
+
+//phonenumber
+Route::get('phonenumbers/create','PhonenumberController@create');
+Route::post('phonenumbers/create','PhonenumberController@store');
+Route::get('phonenumbers/{id}/show','PhonenumberController@show');
+
+
  Route::get('personaldetails/create','PersonalDetailsController@create');
 Route::post('personaldetails/create','PersonalDetailsController@store');
 Route::get('personaldetails/show','PersonalDetailsController@show');
