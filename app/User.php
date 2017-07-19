@@ -29,7 +29,7 @@ class User extends Authenticatable
 
     public function personaldetails()
     {
-        return $this->hasMany('App\Personaldetails');
+        return $this->hasOne('App\Personaldetails');
     }
 
     public function olevels()

@@ -6,10 +6,16 @@ use Illuminate\Http\Request;
 
 use Auth;
 
+use App\Session;
+
 use App\Personaldetails;
 
 class PersonalDetailsController extends Controller
 {
+    public function _construct()
+    {
+        $this->middleware('auth', ['only'=> ['create','edit','update']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -40,7 +46,7 @@ class PersonalDetailsController extends Controller
     {
         $user = Auth::user();
 
-        $pers = new Personaldetails;
+        $pers = new Personaldetails();
 
         $pers->firstname = $request->input('firstname');
         $pers->middlename = $request->input('middlename');
@@ -63,11 +69,8 @@ class PersonalDetailsController extends Controller
      */
     public function show()
     {
-
-        $user = Auth::user();
-        $pers = $user->personaldetails;
-
-         return view('personaldetails.show',compact('pers'));
+        $pers = Auth::user()->personaldetails;
+        return view('personaldetails.show',compact('pers'));
     }
 
     /**
@@ -76,9 +79,19 @@ class PersonalDetailsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        //
+       $pers = Auth::user()->personaldetails;
+
+      if ($pers!==null) {
+          return view('personaldetails.edit');
+      } else {
+          return view('personaldetails.create');
+      }
+      
+       
+       
+       
     }
 
     /**
@@ -88,9 +101,29 @@ class PersonalDetailsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $user = Auth::user();
+
+        $pers_dets = Auth::user()->personaldetails->id;
+        $per = Personaldetails::whereUserId($user->id)->whereId($pers_dets)->first();
+
+        $per = new Personaldetails();
+
+        $per->firstname = $request->input('firstname');
+        $per->middlename = $request->input('middlename');
+        $per->lastname = $request->input('lastname');
+        $per->user_id = $user->id;
+        $per->gender =$request->input('gender');
+        $per->nationality = $request->input('nationality');
+        $per->birthdate = $request->input('birthdate');
+
+        $per->save();
+         $pers = $user->personaldetails;
+
+         Session::flash('flash_message', 'Task successfully added!');
+
+        return view('personaldetails.show',compact('pers'));
     }
 
     /**
@@ -99,8 +132,11 @@ class PersonalDetailsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy()
     {
-        //
+        $pers = Personaldetails::whereUserId(Auth::user()->id)->first();
+        $pers->delete();
+
+        return redirect('personaldetails.show');
     }
 }

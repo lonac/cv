@@ -1,16 +1,19 @@
 <div class="col-md-8 col-md-offset-2">
 	<div class="panel panel-inverse">
-		@if($pers->count()>0)
+		@if(Session::has('flash_message'))
+		    <div class="alert alert-success">
+		        {{ Session::get('flash_message') }}
+		    </div>
+		@endif
+		@if($pers!==null)
 		<div class="panel-heading"><strong>PERSONAL DETAILS:</strong></div>	
-		<div class="panel-body">
-				@foreach($pers as $personee)
-					<strong>Firstname :</strong>{{$personee->firstname}}</br>
-					<strong>Middlename:</strong>{{$personee->middlename}}</br>
-					<strong>Lastname :</strong>{{$personee->lastname}}</br>
-					<strong>Gender : </strong>{{$personee->gender}} </br>
-					<strong>Citizenship :</strong>{{$personee->nationality}}</br>
-					<strong>Birthdate:</strong>{{$personee->birthdate}}</br>
-				@endforeach
+		<div class="panel-body">		
+					<strong>Firstname :</strong>{{$pers->firstname}}</br>
+					<strong>Middlename:</strong>{{$pers->middlename}}</br>
+					<strong>Lastname :</strong>{{$pers->lastname}}</br>
+					<strong>Gender : </strong>{{$pers->gender}} </br>
+					<strong>Citizenship :</strong>{{$pers->nationality}}</br>
+					<strong>Birthdate:</strong>{{$pers->birthdate}}</br>
 			@else
 			<div class="col-md-6">
 			<h3>
