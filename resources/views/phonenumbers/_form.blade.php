@@ -1,13 +1,12 @@
-<div class="form-group">
-    <label for="phonenumber" class="col-sm-2 control-label">phonenumber</label>
-    <div class="col-sm-10">
-        <input type="number" name="phonenumber" value="phonenumber" class="form-control" id="phonenumber" required="required">
-        @if($errors->has('phonenumber'))
-            <p class="help-block">
-                <span class="alert alert-danger">
-                    {{ $errors->first('phonenumber') }}
-                </span>
-            </p>
-        @endif
-    </div>
+<div class="col-md-8 col-md-offset-2">
+<div class="panel panel-inverse">
+  @if($myphonenumbers->count()>0)
+        @foreach($myphonenumbers as $phonee)
+            <h3>
+                Phone Number : {{ $phonee->phonenumber}}  <a href="{{url('phonenumbers/'.$phonee->id.'/edit')}}">Edit</a>
+            </h3>
+        @endforeach
+    @endif
+  </div>  
+</div>
 </div>

@@ -1,19 +1,18 @@
 @extends('layout.master')
 
-@section('title','Phone Number')
+@section('title','Phone numbers')
 
 @section('content')
-	<div class="container">
-		<div class="row">
-			@if($myphonenumbers->count()>0)
-				@foreach($myphonenumbers as $phonee)
-					<h3>
-						Phone Number : {{ $phonee->phonenumber}}  <a href="{{url('phonenumbers/'.$phonee->id.'/edit')}}">Edit</a>
-					</h3>
-				@endforeach
-			@endif
-		</div>
+    <div class="container">
+        <div class="row">
+        		@if (session('status'))
+				    <div class="alert alert-success">
+				        {{ session('status') }}
+				    </div>
+				@endif
+             @include('phonenumbers._form')
+        </div>
 
-	</div>
+    </div>
 
 @endsection
