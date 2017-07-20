@@ -8,7 +8,7 @@
 			@if($myphonenumbers->count()>0)
 				@foreach($myphonenumbers as $phonee)
 					<h3>
-						Phone Number : {{ $phonee->phonenumber}}  <a href="{{url('phonenumbers/'.$phonee->id)}}">Edit</a>
+						Phone Number : {{ $phonee->phonenumber}}  <a href="{{url('phonenumbers/'.$phonee->id.'/edit')}}">Edit</a>
 					</h3>
 				@endforeach
 			@endif

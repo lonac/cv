@@ -9,9 +9,7 @@
 			@include('personaldetails._form')
 		</div>
 			{{--  Contacts--}}
-			<div class="row">
-				@include('contacts._form')
-			</div>
+
 
 			{{--Ordinary level--}}
 			<div class="row">

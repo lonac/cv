@@ -10,6 +10,11 @@ use App\Phonenumber;
 
 class PhonenumberController extends Controller
 {
+
+    public function _construct()
+    {
+        $this->middleware('auth', ['only'=> ['create','edit','update']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -56,7 +61,7 @@ class PhonenumberController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
         $user = Auth::user();
         $myphonenumbers = $user->phonenumbers;
@@ -72,7 +77,10 @@ class PhonenumberController extends Controller
      */
     public function edit($id)
     {
-        //
+        $phonenumber = Phonenumber::whereUserId(Auth::user()->id)->whereId($id)->first();
+        
+        return view('phonenumbers.edit',compact('phonenumber'));
+
     }
 
     /**
@@ -84,7 +92,17 @@ class PhonenumberController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $user = Auth::user();
+
+        $phone = Phonenumber::findOrFail($id);
+        $phone->phonenumber = $request->input('phonenumber');
+        $phone->user_id = $user->id;
+
+        $phone->save();
+
+         return redirect('phonenumbers/show')
+         ->with('status','Phonenumber was successfull Changed');
     }
 
     /**
