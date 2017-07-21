@@ -15,15 +15,29 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//Route::resource('personaldetails','PersonalDetailsController');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/about','HomeController@about');
 
+//contacts
+
+//phonenumber
+Route::get('phonenumbers/create','PhonenumberController@create');
+Route::post('phonenumbers/create','PhonenumberController@store');
+Route::get('phonenumbers/show','PhonenumberController@show');
+Route::patch('phonenumbers/{id}/edit','PhonenumberController@update');
+Route::get('phonenumbers/{id}/edit','PhonenumberController@edit');
+
+
+
 Route::get('personaldetails/create','PersonalDetailsController@create');
 Route::post('personaldetails/create','PersonalDetailsController@store');
 Route::get('personaldetails/show','PersonalDetailsController@show');
+Route::get('personaldetails/edit','PersonalDetailsController@edit');
+Route::post('personaldetails/edit','PersonalDetailsController@update'); 
 
 Route::get('educationdetails/create','EducationDetailsController@create');
 Route::post('educationdetails/create','EducationDetailsController@store');
