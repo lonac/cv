@@ -8,8 +8,12 @@
 			{{--  Personal--}}
 			@include('personaldetails._form')
 		</div>
-			{{--  Contacts--}}
+			{{--  Address--}}
 
+			@include('address._form')
+
+			{{-- Phonenumbers--}}
+			@include('phonenumbers._form')
 
 			{{--Ordinary level--}}
 			<div class="row">

@@ -6,7 +6,8 @@
 				    </div>
 				@endif
 		@if($pers!==null)
-		<div class="panel-heading"><strong>PERSONAL DETAILS:</strong></div>	
+		<div class="panel-heading"><strong>PERSONAL DETAILS:
+		 	</a></strong></div>	
 		<div class="panel-body">		
 					<strong>Firstname :</strong>{{$pers->firstname}}</br>
 					<strong>Middlename:</strong>{{$pers->middlename}}</br>

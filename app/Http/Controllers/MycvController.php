@@ -16,8 +16,9 @@ class MycvController extends Controller
     public function index()
     {
         $user= Auth::user();
-        $cont = $user->contacts;
         $pers = $user->personaldetails;
+        $address = Auth::user()->addresses;
+        $myphonenumbers = $user->phonenumbers;
         $ol = $user->olevels;
         $al = $user->alevels;
         $cl = $user->certificatelevels;
@@ -38,7 +39,7 @@ class MycvController extends Controller
         $acp = $user->presentations;
         $act = $user->activities;
 
-        return view('mycv.show',compact('cont','pers','ol','al','pt','acp','act',
+        return view('mycv.show',compact('address','myphonenumbers','pers','ol','al','pt','acp','act',
             'cl','dl','dgl','ml','pl','ex','int','sk','rf','rs','pa','aw','jd','pr'));
     }
 
