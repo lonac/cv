@@ -50,9 +50,9 @@ Route::post('educationdetails/create','EducationDetailsController@store');
 Route::get('educationdetails/show','EducationDetailsController@show');
 
 //contacts
-Route::get('contacts/create','ContactController@create');
+ /* Route::get('contacts/create','ContactController@create');
 Route::post('contacts/create','ContactController@store');
-Route::get('contacts/show','ContactController@show');
+Route::get('contacts/show','ContactController@show'); */
 
 
 //oleve
