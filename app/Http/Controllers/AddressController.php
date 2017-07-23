@@ -4,8 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Auth;
+
+use App\Address;
+
 class AddressController extends Controller
 {
+    public function _construct()
+    {
+        $this->middleware('auth', ['only'=>['create','update','edit']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -23,7 +31,7 @@ class AddressController extends Controller
      */
     public function create()
     {
-        //
+        return view('address.create');
     }
 
     /**
@@ -34,7 +42,13 @@ class AddressController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user =     Auth::user();
+        $address=  new Address;
+        $address->address = $request->input('address');
+        $address->user_id = $user->id;
+        $address->save();
+
+        return view('address.create');
     }
 
     /**
@@ -43,9 +57,11 @@ class AddressController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $address = Auth::user()->addresses;
+
+        return view('address.show',compact('address'));
     }
 
     /**
@@ -56,7 +72,9 @@ class AddressController extends Controller
      */
     public function edit($id)
     {
-        //
+        $address = Address::whereUserId(Auth::user()->id)->whereId($id)->first();
+        
+        return view('address.edit',compact('address'));
     }
 
     /**
@@ -68,7 +86,13 @@ class AddressController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $address = Address::findOrFail($id);
+        $address->address = $request->input('address');
+        $address->user_id = Auth::user()->id;
+        $address->save();
+
+        $address = Auth::user()->addresses;
+        return view('address.show',compact('address'))->with('status','Your address was successful changed!');
     }
 
     /**
