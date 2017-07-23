@@ -43,7 +43,7 @@ Route::get('personaldetails/create','PersonalDetailsController@create');
 Route::post('personaldetails/create','PersonalDetailsController@store');
 Route::get('personaldetails/show','PersonalDetailsController@show');
 Route::get('personaldetails/edit','PersonalDetailsController@edit');
-Route::post('personaldetails/edit','PersonalDetailsController@update'); 
+Route::patch('personaldetails/edit','PersonalDetailsController@update'); 
 
 Route::get('educationdetails/create','EducationDetailsController@create');
 Route::post('educationdetails/create','EducationDetailsController@store');

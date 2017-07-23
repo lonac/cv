@@ -1,10 +1,10 @@
 <div class="col-md-8 col-md-offset-2">
 	<div class="panel panel-inverse">
-		@if(Session::has('flash_message'))
-		    <div class="alert alert-success">
-		        {{ Session::get('flash_message') }}
-		    </div>
-		@endif
+		@if (session('status'))
+				    <div class="alert alert-success">
+				        {{ session('status') }}
+				    </div>
+				@endif
 		@if($pers!==null)
 		<div class="panel-heading"><strong>PERSONAL DETAILS:</strong></div>	
 		<div class="panel-body">		
@@ -15,12 +15,12 @@
 					<strong>Citizenship :</strong>{{$pers->nationality}}</br>
 					<strong>Birthdate:</strong>{{$pers->birthdate}}</br>
 			@else
-			<div class="col-md-6">
-			<h3>
-				<font color="red">No Personal Details so far!</font>
-			</h3>
-				<strong><a href="{{url('personaldetails/create')}}">Add Details?</a></strong>	
-			</div>
+				<div class="col-md-6">
+					<h3>
+						<font color="red">No Personal Details so far!</font>
+					</h3>
+					<strong><a href="{{url('personaldetails/create')}}">Add Details?</a></strong>	
+				</div>
 			
 			@endif
 		</div>

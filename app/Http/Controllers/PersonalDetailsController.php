@@ -69,7 +69,7 @@ class PersonalDetailsController extends Controller
      */
     public function show()
     {
-        $pers = Auth::user()->personaldetails;
+        $pers = Auth::user()->personaldetails->first();
         return view('personaldetails.show',compact('pers'));
     }
 
@@ -81,17 +81,9 @@ class PersonalDetailsController extends Controller
      */
     public function edit()
     {
-       $pers = Auth::user()->personaldetails;
-
-      if ($pers!==null) {
-          return view('personaldetails.edit');
-      } else {
-          return view('personaldetails.create');
-      }
-      
+       $pers = Auth::user()->personaldetails->first();
        
-       
-       
+          return view('personaldetails.edit',compact('pers'));   
     }
 
     /**
@@ -106,9 +98,7 @@ class PersonalDetailsController extends Controller
         $user = Auth::user();
 
         $pers_dets = Auth::user()->personaldetails->id;
-        $per = Personaldetails::whereUserId($user->id)->whereId($pers_dets)->first();
-
-        $per = new Personaldetails();
+        $per = Personaldetails::findOrFail($pers_dets)->first();
 
         $per->firstname = $request->input('firstname');
         $per->middlename = $request->input('middlename');
@@ -117,13 +107,11 @@ class PersonalDetailsController extends Controller
         $per->gender =$request->input('gender');
         $per->nationality = $request->input('nationality');
         $per->birthdate = $request->input('birthdate');
-
         $per->save();
          $pers = $user->personaldetails;
 
-         Session::flash('flash_message', 'Task successfully added!');
-
-        return view('personaldetails.show',compact('pers'));
+        return view('personaldetails.show',compact('pers'))
+        ->with('status','Personal Details Successful Updated');
     }
 
     /**
