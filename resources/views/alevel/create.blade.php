@@ -34,8 +34,8 @@
 						</div>
                    			<button type="submit" class="btn btn-success">SAVE</button>
                    			<a href="{{url('dlevel/create')}}" class="btn btn-success" role="button">NEXT</a>
-						</div>
 							</form>
+						</div>
 						</div>
 				</div>
 			</div>
