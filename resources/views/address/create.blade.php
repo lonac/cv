@@ -37,7 +37,7 @@
                     <div class="form-group">
                         <div class="col-sm-10 col-sm-offset-2">
                             <button type="submit" class="btn btn-primary">Add</button>
-                               <a href="{{url('address/create')}}" class="btn btn-success" role="button">SKIP</a>
+                               <a href="{{url('phonenumbers/create')}}" class="btn btn-success" role="button">SKIP</a>
                         </div>
                     </div>
                 </form>

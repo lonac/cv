@@ -51,7 +51,7 @@ class PhonenumberController extends Controller
 
         $phone->save();
 
-         return redirect('phonenumbers/create')->with('status','Phonenumber successfull added');
+         return redirect('phonenumbers/create');
 
     }
 
