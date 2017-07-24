@@ -69,7 +69,7 @@ class PersonalDetailsController extends Controller
      */
     public function show()
     {
-        $pers = Auth::user()->personaldetails->first();
+        $pers = Auth::user()->personaldetails;
         return view('personaldetails.show',compact('pers'));
     }
 
@@ -81,7 +81,7 @@ class PersonalDetailsController extends Controller
      */
     public function edit()
     {
-       $pers = Auth::user()->personaldetails->first();
+       $pers = Auth::user()->personaldetails;
        
           return view('personaldetails.edit',compact('pers'));   
     }
@@ -98,7 +98,7 @@ class PersonalDetailsController extends Controller
         $user = Auth::user();
 
         $pers_dets = Auth::user()->personaldetails->id;
-        $per = Personaldetails::findOrFail($pers_dets)->first();
+        $per = Personaldetails::findOrFail($pers_dets);
 
         $per->firstname = $request->input('firstname');
         $per->middlename = $request->input('middlename');
