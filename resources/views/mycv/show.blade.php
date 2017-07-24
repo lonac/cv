@@ -11,7 +11,7 @@
 		<div class="row">
 			<div class="col-md-5 col-md-offset-1">
 				@if($address!==null&& $pers!==null)
-					{{$address->address}} </br>{{$address->location}}</br>{{Auth::user()->email}}</br>	
+					{{$address->address}}, </br>{{$address->location}}.</br>{{Auth::user()->email}}</br>	
 				@endif
 				@if($myphonenumbers->count()>0)Mobile Phones:
 					@foreach($myphonenumbers as $phonee)
@@ -28,13 +28,13 @@
 		</div>
 		<div class="row">
 			<legend>EDUCATION</legend>
-			<div>
-			</div>
+				{{--Ordinary level--}}
+				@include('olevel._form')
 		</div>
 
-			{{--Ordinary level--}}
+			
 			<div class="row">
-				@include('olevel._form')
+				
 			</div>
 
 			{{--Advanced Level --}}
