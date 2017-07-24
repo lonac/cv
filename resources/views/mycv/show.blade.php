@@ -8,7 +8,7 @@
 			{{--  Personal--}}
 			@include('personaldetails._form')
 		</div>
-			{{--  Address--}}
+			
 
 			@include('address._form')
 

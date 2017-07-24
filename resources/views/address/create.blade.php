@@ -15,8 +15,10 @@
 
                            <div class="form-group">
                                 <div class="col-sm-10">
-                                    <input type="text" name="address" value="e.g. box 737 TZ" class="form-control" id="address" required="required">
-                                   
+                                     <textarea class="form-control" rows="4" name="address"
+                                      placeholder="CV-CREATOR COMPANY,
+                                                 BOX XXXX,
+                                                Tanzania. "></textarea>
                                     @if($errors->has('address'))
                                       <p class="help-block">
                                             <span class="alert alert-danger">

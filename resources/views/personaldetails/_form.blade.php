@@ -6,10 +6,11 @@
 				@endif
 		@if($pers!==null)
 			<center>
-				{{ $pers->firstname}} {{$pers->middlename}} {{ $pers->lastname}}
-					
+				{{ $pers->firstname}} {{$pers->middlename}} {{ $pers->lastname}}</br>
+						Curriculum Vitae</br>
+						{{$pers->updated_at}}</br>	
 			</center>
-
+			
 			@else
 				<div class="col-md-8 col-md-offset-2">				
 					<h3>
