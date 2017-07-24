@@ -1,7 +1,7 @@
 <div class="col-md-12 col-md-offset-0">
 	<div class="panel panel-inverse">
-		@if($ol->count()>0)	
-			<div class="panel-body">
+		<div class="panel-body">
+			@if($ol->count()>0)	
 				<strong>ORDINARY-LEVEL:</strong></br>
 					@foreach($ol as $olee)
 					<strong>School Name:</strong>{{$olee->olevname}}</br>

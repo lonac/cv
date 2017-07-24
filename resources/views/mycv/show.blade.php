@@ -4,6 +4,8 @@
 
 @section('content')
 	<div class="container">
+		<div class="panel panel-default">
+			<div class ="panel-body">
 		<div class="row">
 			{{--  Personal--}}
 			@include('personaldetails._form')
@@ -29,11 +31,10 @@
 		</div>
 		</div>
 		<div class="row">
-			<legend>EDUCATION</legend>
 				{{--Ordinary level--}}
 				@include('olevel._form')
 		</div>
-			{{--Advanced Level --}}
+			
 			<div class="row">
 				@include('alevel._form')
 			</div>
@@ -122,6 +123,8 @@
 				@include('activities._form')
 			</div>
 
+		</div>
+	</div>
 	</div>
 
 @endsection

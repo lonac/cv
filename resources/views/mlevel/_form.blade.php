@@ -1,4 +1,4 @@
-<div class="col-md-10 col-md-offset-0">
+<div class="col-md-12 col-md-offset-0">
 	<div class="panel panel-inverse">
 		@if($ml->count()>0)
 		<strong>MASTERS DESCRIPTIONS:</strong></br>

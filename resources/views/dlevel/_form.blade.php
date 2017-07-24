@@ -1,8 +1,8 @@
-<div class="col-md-10 col-md-offset-0">
+<div class="col-md-12 col-md-offset-0">
 	<div class="panel panel-inverse">
 		@if($dl->count()>0)
 		<div class="panel-body">
-			<strong>DIPLOMA DETAILS:</strong</br>
+			<strong>DIPLOMA DETAILS:</strong></br>
 						@foreach($dl as $dlee)
 				<strong>College Name:</strong>{{$dlee->colname}}</br>
 				<strong>Year of Study:</strong>{{$dlee->dyear}}</br>

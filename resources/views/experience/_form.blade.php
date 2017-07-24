@@ -1,4 +1,4 @@
-<div class="col-md-10 col-md-offset-0">
+<div class="col-md-12 col-md-offset-0">
 	<div class="panel panel-inverse">
 		@if($ex->count()>0)
 		<strong>WORK EXPERIENCE:</strong>	</br>	
