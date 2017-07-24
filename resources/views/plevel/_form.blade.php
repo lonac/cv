@@ -1,8 +1,8 @@
 <div class="col-md-12 col-md-offset-0">
 	<div class="panel panel-inverse">
 		@if($pl->count()>0)
-		<strong>PHD DESCRIPTIONS:</strong></br>
 		<div class="panel-body">
+			<strong>PHD DESCRIPTIONS:</strong></br>
 				@foreach($pl as $plee)
 					<strong>University Name:</strong>{{$plee->uniname}}</br>
 					<strong>Year of Study:</strong>{{$plee->pyear}}</br>

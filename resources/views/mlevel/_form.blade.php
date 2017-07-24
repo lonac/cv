@@ -1,8 +1,8 @@
 <div class="col-md-12 col-md-offset-0">
 	<div class="panel panel-inverse">
 		@if($ml->count()>0)
-		<strong>MASTERS DESCRIPTIONS:</strong></br>
 		<div class="panel-body">
+			<strong>MASTERS DESCRIPTIONS:</strong></br>
 				@foreach($ml as $mlee)
 					<strong>University Name:</strong>{{$mlee->uniname}}</br>
 					<strong>Year of Study:</strong>{{$mlee->myear}}</br>
