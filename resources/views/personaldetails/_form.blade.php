@@ -1,4 +1,4 @@
-<div class="col-md-10 col-md-offset-1">
+<div class="col-md-10 col-md-offset-0">
 				@if (session('status'))
 				    <div class="alert alert-success">
 				        {{ session('status') }}

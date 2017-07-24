@@ -1,7 +1,7 @@
-<div class="col-md-8 col-md-offset-2">
+<div class="col-md-10 col-md-offset-0">
 <div class="panel panel-inverse">
   @if($aw->count()>0)
-  <div class="panel-heading"> <strong>AWARDS:</strong></div>
+   <strong>AWARDS:</strong></br>
   <div class="panel-body">
       @foreach($aw as $awee)
         <strong>Date/Year:</strong>{{$awee->date}}</br>

@@ -1,4 +1,4 @@
-<div class="col-md-10 col-md-offset-1">
+<div class="col-md-10 col-md-offset-0">
 <div class="panel panel-inverse">
   @if($acp->count()>0)
   <strong>ACADEMIC PRESENTATIONS:</strong></br>
