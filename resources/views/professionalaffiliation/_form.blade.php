@@ -1,7 +1,7 @@
-<div class="col-md-8 col-md-offset-2">
+<div class="col-md-10 col-md-offset-1">
 <div class="panel panel-inverse">
   @if($pa->count()>0)
-  <div class="panel-heading"> <strong>PROFESSIONAL AFFILIATIONS:</strong></div>
+   <strong>PROFESSIONAL AFFILIATIONS:</strong></br>
   <div class="panel-body">
       @foreach($pa as $paee)
         <strong>Title:</strong>{{ $paee->name }}</br>

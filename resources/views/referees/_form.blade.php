@@ -1,7 +1,7 @@
-<div class="col-md-8 col-md-offset-2">
+<div class="col-md-10 col-md-offset-1">
 <div class="panel panel-inverse">
   @if($rf->count()>0)
-  <div class="panel-heading"> <strong>REFEREES:</strong></div>
+   <strong>REFEREES:</strong></br>
   <div class="panel-body">
       @foreach($rf as $rfee)
         <strong>Name:</strong>{{$rfee->refaname}}</br>

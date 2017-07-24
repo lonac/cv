@@ -1,7 +1,7 @@
-<div class="col-md-8 col-md-offset-2">
+<div class="col-md-10 col-md-offset-1">
 	<div class="panel panel-inverse">
 	  @if($myphonenumbers->count()>0)
-	  <div class="panel-heading"><strong>MY PHONE NUMBERS:</strong></div>		
+	  <strong>MY PHONE NUMBERS:</strong></br>		
 		<div class="panel-body">
 	        @foreach($myphonenumbers as $phonee)
 	            <h3>

@@ -1,8 +1,8 @@
-<div class="col-md-8 col-md-offset-2">
+<div class="col-md-10 col-md-offset-1">
 	<div class="panel panel-inverse">
 		@if($dgl->count()>0)
-		<div class="panel-heading"><strong>DEGREE DESCRIPTIONS:</strong></div>
 		<div class="panel-body">
+			<strong>DEGREE DESCRIPTIONS:</strong></br>
 			@foreach($dgl as $dglee)
 				<strong>University Name:</strong>{{$dglee->uniname}}</br>
 				<strong>Year of Study:</strong>{{$dglee->dgyear}}</br>

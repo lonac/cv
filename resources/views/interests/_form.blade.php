@@ -1,7 +1,7 @@
-<div class="col-md-8 col-md-offset-2">
+<div class="col-md-10 col-md-offset-1">
 <div class="panel panel-inverse">
   @if($int->count()>0)
-  <div class="panel-heading"> <strong>INTERESTS:</strong></div>
+  <strong>INTERESTS:</strong></br>
   <div class="panel-body">
       @foreach($int as $intee)
         <strong>Interests:</strong>{{$intee->interest}}</br>

@@ -1,7 +1,7 @@
-<div class="col-md-8 col-md-offset-2">
+<div class="col-md-10 col-md-offset-1">
 <div class="panel panel-inverse">
   @if($acp->count()>0)
-  <div class="panel-heading"> <strong>ACADEMIC PRESENTATIONS:</strong></div>
+  <strong>ACADEMIC PRESENTATIONS:</strong></br>
   <div class="panel-body">
       @foreach($acp as $acpee)
         <strong>Date/Year:</strong>{{$acpee->date}}</br>

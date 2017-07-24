@@ -1,4 +1,4 @@
-<div class="col-md-8 col-md-offset-2">
+<div class="col-md-10 col-md-offset-1">
 				@if (session('status'))
 				    <div class="alert alert-success">
 				        {{ session('status') }}
@@ -12,7 +12,7 @@
 			</center>
 			
 			@else
-				<div class="col-md-8 col-md-offset-2">				
+				<div class="col-md-10 col-md-offset-1">				
 					<h3>
 						<font color="red">No Personal Details so far!</font>
 					</h3>

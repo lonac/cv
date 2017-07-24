@@ -1,7 +1,7 @@
-<div class="col-md-8 col-md-offset-2">
+<div class="col-md-10 col-md-offset-1">
 	<div class="panel panel-inverse">
 		@if($ex->count()>0)
-		<div class="panel-heading"><strong>WORK EXPERIENCE:</strong></div>			
+		<strong>WORK EXPERIENCE:</strong>	</br>	
         @foreach($ex as $expee)
             <div class="panel-body">
             <strong>Organisation:</strong>{{$expee->organisation}}</br>

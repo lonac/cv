@@ -1,7 +1,7 @@
-<div class="col-md-8 col-md-offset-2">
+<div class="col-md-10 col-md-offset-1">
 <div class="panel panel-inverse">
   @if($rs->count()>0)
-  <div class="panel-heading"> <strong>RESEARCHES:</strong></div>
+  <strong>RESEARCHES:</strong></br>
   <div class="panel-body">
       @foreach($rs as $rsee)
         <strong>Title:</strong>{{$rsee->name}}</br>

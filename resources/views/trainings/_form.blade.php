@@ -1,7 +1,7 @@
-<div class="col-md-8 col-md-offset-2">
+<div class="col-md-10 col-md-offset-1">
 <div class="panel panel-inverse">
   @if($pt->count()>0)
-  <div class="panel-heading"> <strong>PROFESSIONAL TRAININGS:</strong></div>
+   <strong>PROFESSIONAL TRAININGS:</strong></br>
   <div class="panel-body">
       @foreach($pt as $ptee)
         <strong>Date/Year:</strong>{{$ptee->date}}</br>
