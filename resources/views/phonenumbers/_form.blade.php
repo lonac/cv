@@ -8,8 +8,6 @@
 	                Phone Number : {{ $phonee->phonenumber}}  <a href="{{url('phonenumbers/'.$phonee->id.'/edit')}}">Edit</a>
 	            </h3>
 	        @endforeach
-	       @else
-	       		No phone number registered!
 		    @endif
 		 </div>  
 	</div>

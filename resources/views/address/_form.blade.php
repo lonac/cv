@@ -1,5 +1,10 @@
 <div class="col-md-8 col-md-offset-2">
 <div class="panel panel-inverse">
+	@if (session('status'))
+				    <div class="alert alert-success">
+				        {{ session('status') }}
+				    </div>
+	@endif
   @if($address->count()>0)
   	<div class="panel-heading"><strong> MY ADDRESS:</strong></div>
 	  	<div class="panel-body">
@@ -9,8 +14,6 @@
 		            </h3>
 		        @endforeach
 	     </div>
-     	@else
-     		You have no address!
     @endif
   </div>  
 </div>
