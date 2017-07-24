@@ -46,6 +46,7 @@ class AddressController extends Controller
         $address=  new Address;
         $address->address = $request->input('address');
         $address->user_id = $user->id;
+        $address->location = $request->input('location');
         $address->save();
 
         return view('phonenumbers.create');
@@ -89,6 +90,7 @@ class AddressController extends Controller
         $addr_id = Auth::user()->addresses->id;
         $address = Address::findOrFail($addr_id);
         $address->address = $request->input('address');
+        $address->location = $request->input('location');
         $address->user_id = Auth::user()->id;
         $address->save();
 

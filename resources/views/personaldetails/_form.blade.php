@@ -6,9 +6,9 @@
 				@endif
 		@if($pers!==null)
 			<center>
-				{{ $pers->firstname}} {{$pers->middlename}} {{ $pers->lastname}}</br>
+				<h4>{{ $pers->firstname}} {{$pers->middlename}} {{ $pers->lastname}}</h4>
 						Curriculum Vitae</br>
-						{{$pers->updated_at}}</br>	
+						{{$pers->updated_at->diffForHumans()}}</br>	
 			</center>
 			
 			@else

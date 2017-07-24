@@ -15,10 +15,10 @@
 
                            <div class="form-group">
                                 <div class="col-sm-10">
-                                     <textarea class="form-control" rows="4" name="address"
-                                      placeholder="CV-CREATOR COMPANY,
-                                                 BOX XXXX,
-                                                Tanzania. "></textarea>
+                                     <textarea class="form-control" rows="2" name="address" required=""
+                                      placeholder="CV-CREATOR COMPANY,BOX 2783."></textarea>
+                                <label for="location">Location</label>
+                                    <input type="text" placeholder="eg.Country/Region-city" name="location" required="" class="form-control">
                                     @if($errors->has('address'))
                                       <p class="help-block">
                                             <span class="alert alert-danger">
@@ -30,7 +30,7 @@
                             </div>
 
                             <div class="form-group">
-                                <div class="col-md-6 col-md-offset-2">
+                                <div class="col-md-6">
                                     <button type="submit" class="btn btn-primary">Add</button>
                                 </div>
                             </div>

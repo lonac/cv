@@ -8,12 +8,24 @@
 			{{--  Personal--}}
 			@include('personaldetails._form')
 		</div>
-			
-
-			@include('address._form')
-
-			{{-- Phonenumbers--}}
-			@include('phonenumbers._form')
+		<div class="row">
+			<div class="col-md-5 col-md-offset-1">
+				@if($address!==null&& $pers!==null)
+					{{$address->address}} </br>{{$address->location}}</br>{{Auth::user()->email}}</br>	
+				@endif
+			</div>
+			<div class="col-md-4 col-md-offset-2">
+			@if($pers!==null)
+				Citizenship : {{$pers->nationality}} </br>
+				Languages : {{ $pers->language}} </br>
+			@endif
+			@if($myphonenumbers->count()>0)Mobile Phones:
+					@foreach($myphonenumbers as $phonee)
+	              	- {{ $phonee->phonenumber}}</br>
+	        		@endforeach
+		    @endif
+			</div>
+		</div>
 
 			{{--Ordinary level--}}
 			<div class="row">

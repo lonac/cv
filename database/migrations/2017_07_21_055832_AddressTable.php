@@ -18,6 +18,7 @@ class AddressTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade');
             $table->string('address');
+            $table->string('location');
             $table->timestamps();
         });
     }
