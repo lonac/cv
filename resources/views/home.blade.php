@@ -9,7 +9,7 @@
                 <div class="panel-heading"><strong>CURRICULUM VITAE (CV):</strong></div>
                 <div class="panel-body">
                 	<a href="{{url('mycv/show')}}" role="button" class="btn btn-primary">VIEW</a>  
-                    <a href="#" role="button" class="btn btn-primary">EDIT</a> 
+                    <a href="{{url('mycv/edit')}}" role="button" class="btn btn-primary">EDIT</a> 
                     <a href="#" role="button" class="btn btn-danger">DELETE</a>      
                 </div>
             </div>

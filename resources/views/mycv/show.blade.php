@@ -13,17 +13,17 @@
 				@if($address!==null&& $pers!==null)
 					{{$address->address}} </br>{{$address->location}}</br>{{Auth::user()->email}}</br>	
 				@endif
-			</div>
-			<div class="col-md-4 col-md-offset-2">
-			@if($pers!==null)
-				Citizenship : {{$pers->nationality}} </br>
-				Languages : {{ $pers->language}} </br>
-			@endif
-			@if($myphonenumbers->count()>0)Mobile Phones:
+				@if($myphonenumbers->count()>0)Mobile Phones:
 					@foreach($myphonenumbers as $phonee)
 	              	- {{ $phonee->phonenumber}}</br>
-	        		@endforeach
+	        	@endforeach
 		    @endif
+			</div>
+			<div class="col-md-4 col-md-offset-2">
+				@if($pers!==null)
+					Citizenship : {{$pers->nationality}} </br>Languages : {{ $pers->language}} </br>
+					Gender : {{$pers->gender}} </br>Marital Status : {{$pers->marital}}</br>		
+				@endif
 			</div>
 		</div>
 
