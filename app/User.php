@@ -139,7 +139,7 @@ class User extends Authenticatable
 
     public function addresses()
     {
-        return $this->hasMany('App\Address');
+        return $this->hasOne('App\Address');
     }
 
 }

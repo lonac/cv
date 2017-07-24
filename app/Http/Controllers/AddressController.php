@@ -48,7 +48,7 @@ class AddressController extends Controller
         $address->user_id = $user->id;
         $address->save();
 
-        return view('address.create');
+        return view('phonenumbers.create');
     }
 
     /**
@@ -70,10 +70,10 @@ class AddressController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        $address = Address::whereUserId(Auth::user()->id)->whereId($id)->first();
-        
+
+        $address = Auth::user()->addresses;        
         return view('address.edit',compact('address'));
     }
 
@@ -84,9 +84,10 @@ class AddressController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        $address = Address::findOrFail($id);
+        $addr_id = Auth::user()->addresses->id;
+        $address = Address::findOrFail($addr_id);
         $address->address = $request->input('address');
         $address->user_id = Auth::user()->id;
         $address->save();

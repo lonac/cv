@@ -8,15 +8,16 @@
                 <div class="panel panel-inverse">
                     <div class="panel-heading">Edit Address:</div>
                     <div class="panel-body">
-                        <form action="{{ url('address/'.$address->id.'/edit')}}" method="POST" role="form" class="form-horizontal">
+                        <form action="{{ url('address/edit')}}" method="POST" role="form" class="form-horizontal">
                             {{ method_field('patch') }}
 
                             {{ csrf_field() }}
 
                             <div class="form-group">
                                 <div class="col-sm-10">
-                                    <input type="text" name="address" value="{{ $address->address}}" class="form-control" id="address" required="required">
-                                    @if($errors->has('address'))
+                                    <textarea class="form-control" rows="4" name="address"
+                                      placeholder="{{$address->address}}"></textarea>                                  
+                                        @if($errors->has('address'))
                                         <p class="help-block">
                                             <span class="alert alert-danger">
                                                 {{ $errors->first('address') }}

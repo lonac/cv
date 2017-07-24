@@ -5,14 +5,12 @@
 				        {{ session('status') }}
 				    </div>
 	@endif
-  @if($address->count()>0)
+  @if($address!=null)
   	<div class="panel-heading"><strong> MY ADDRESS:</strong></div>
 	  	<div class="panel-body">
-		        @foreach($address as $addresse)
 		            <h3>
-		              Address : {{ $addresse->address}}  <a href="{{url('address/'.$addresse->id.'/edit')}}">Edit</a>
+		              Address : {{ $address->address}}  <a href="{{url('address/edit')}}">Edit</a>
 		            </h3>
-		        @endforeach
 	     </div>
     @endif
   </div>  

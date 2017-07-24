@@ -35,8 +35,8 @@ Route::get('phonenumbers/{id}/edit','PhonenumberController@edit');
 Route::get('address/create','AddressController@create');
 Route::post('address/create','AddressController@store');
 Route::get('address/show','AddressController@show');
-Route::patch('address/{id}/edit','AddressController@update');
-Route::get('address/{id}/edit','AddressController@edit');
+Route::patch('address/edit','AddressController@update');
+Route::get('address/edit','AddressController@edit');
 
 
 Route::get('personaldetails/create','PersonalDetailsController@create');
