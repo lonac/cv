@@ -21,6 +21,8 @@ class PersonalDetailsTable extends Migration
             $table->string('middlename')->nullable();
             $table->string('lastname');
             $table->string('gender');
+            $table->string('language');
+            $table->string('marital');
             $table->date('birthdate');
             $table->string('nationality');
             $table->timestamps();

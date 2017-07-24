@@ -54,6 +54,8 @@ class PersonalDetailsController extends Controller
         $pers->user_id = $user->id;
         $pers->gender =$request->input('gender');
         $pers->nationality = $request->input('nationality');
+        $pers->language = $request->input('language');
+        $pers->marital = $request->input('marital');
         $pers->birthdate = $request->input('birthdate');
 
         $pers->save();
@@ -107,6 +109,8 @@ class PersonalDetailsController extends Controller
         $per->gender =$request->input('gender');
         $per->nationality = $request->input('nationality');
         $per->birthdate = $request->input('birthdate');
+        $pers->language = $request->input('language');
+        $pers->marital = $request->input('marital');
         $per->save();
          $pers = $user->personaldetails;
 
