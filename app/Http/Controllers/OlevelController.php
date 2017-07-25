@@ -75,7 +75,8 @@ class OlevelController extends Controller
      */
     public function edit($id)
     {
-        //
+        $ol = Olevel::whereUserId(Auth::user()->id)->whereId($id)->first();
+        return view('olevel.edit',compact('ol'));
     }
 
     /**
@@ -87,7 +88,19 @@ class OlevelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = Auth::user();
+
+        $olev = Olevel::findOrFail($id);
+        $olev->olevname = $request->input('olevname');
+        $olev->oyear = $request->input('oyear');
+        $olev->remark = $request->input('remark');
+        $olev->user_id = $user->id;
+
+        $olev->save();
+
+        $ol = $user->olevels;
+
+        return redirect('olevel/show')->with('status','Ordinary level details were successful Updated');
     }
 
     /**

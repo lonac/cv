@@ -59,6 +59,8 @@ Route::get('contacts/show','ContactController@show'); */
 Route::get('olevel/create','OlevelController@create');
 Route::post('olevel/create','OlevelController@store');
 Route::get('olevel/show','OlevelController@show');
+Route::get('olevel/{id}/edit','OlevelController@edit');
+Route::patch('olevel/{id}/edit','OlevelController@update');
 
 
 //alevel
