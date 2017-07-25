@@ -12,7 +12,6 @@
 				    </div>
 				@endif
 				<div class="panel panel-inverse">
-					<div class="panel-heading"><strong>ORDINARY-LEVEL DETAILS:</strong></div>
 						<div class="panel panel-body">
 							@if($ol->count()>0)	
 								@foreach($ol as $olee)

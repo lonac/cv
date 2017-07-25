@@ -40,19 +40,18 @@ class PhdlevelController extends Controller
     public function store(Request $request)
     {
         $user = Auth::user();
+        $plev = new Phdlevel;
+        $plev->uniname = $request->input('uniname');
+        $plev->pyear = $request->input('pyear');
+        $plev->program = $request->input('program');
+        $plev->user_id = $user->id;
 
-                $plev = new Phdlevel;
-                $plev->uniname = $request->input('uniname');
-                $plev->pyear = $request->input('pyear');
-                $plev->program = $request->input('program');
-                $plev->user_id = $user->id;
+        $plev->save();
 
-                $plev->save();
+        $pl = $user->phdlevels;
 
-                $pl = $user->phdlevels;
-
-                return view('plevel.create',compact('pl'));
-    }
+        return view('plevel.create',compact('pl'));
+}
 
     /**
      * Display the specified resource.
@@ -76,7 +75,8 @@ class PhdlevelController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pl = Phdlevel::whereUserId(Auth::user()->id)->whereId($id)->first();
+        return view('plevel.edit',compact('pl'));
     }
 
     /**
@@ -88,7 +88,18 @@ class PhdlevelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = Auth::user();
+        $plev = Phdlevel::findOrFail($id);
+        $plev->uniname = $request->input('uniname');
+        $plev->pyear = $request->input('pyear');
+        $plev->program = $request->input('program');
+        $plev->user_id = $user->id;
+
+        $plev->save();
+
+        $pl = $user->phdlevels;
+
+        return redirect('plevel/show')->with('status','Doctorial Details were successful Updated');
     }
 
     /**
