@@ -74,7 +74,10 @@ class JobdescriptionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $jd = Jobdescription::whereUserId(Auth::user()->id)->whereId($id)->first();
+
+         return view('jobdesc.show',compact('jd'));
+
     }
 
     /**
@@ -86,7 +89,18 @@ class JobdescriptionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         $user = Auth::user();
+
+        $jd = Jobdescription::findOrFail($id);
+        $jd->title = $request->input('title');
+        $jd->description = $request->input('description');
+        $jd->user_id = $user->id;
+
+        $jd->save();
+
+        $jd = $user->jobdescriptions;
+
+        return redirect('jobdesc/show')->with('status','Job Description successfully Updated');
     }
 
     /**

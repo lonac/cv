@@ -159,21 +159,29 @@ Route::patch('professionalaffiliation/{id}/edit','ProfessionalAffliationControll
 Route::get('awards/create','AwardsController@create');
 Route::post('awards/create','AwardsController@store');
 Route::get('awards/show','AwardsController@show');
+Route::get('awards/{id}/edit','AwardsController@edit');
+Route::patch('awards/{id}/edit','AwardsController@update');
 
 //job descriptions ProjectsController
 Route::get('jobdesc/create','JobdescriptionController@create');
 Route::post('jobdesc/create','JobdescriptionController@store');
 Route::get('jobdesc/show','JobdescriptionController@show');
+Route::get('jobdesc/{id}/edit','JobdescriptionController@edit');
+Route::patch('jobdesc/{id}/edit','JobdescriptionController@update');
 
 //projects
 Route::get('projects/create','ProjectsController@create');
 Route::post('projects/create','ProjectsController@store');
 Route::get('projects/show','ProjectsController@show');
+Route::get('projects/{id}/edit','ProjectsController@edit');
+Route::patch('projects/{id}/edit','ProjectsController@update');
 
 //professional trainings
 Route::get('trainings/create','TrainingsController@create');
 Route::post('trainings/create','TrainingsController@store');
 Route::get('trainings/show','TrainingsController@show');
+Route::get('trainings/{id}/edit','TrainingsController@edit');
+Route::patch('trainings/{id}/edit','TrainingsController@update');
 
 //academic presentations
 Route::get('presentation/create','PresentationsController@create');

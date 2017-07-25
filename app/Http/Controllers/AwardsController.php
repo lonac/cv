@@ -76,7 +76,8 @@ class AwardsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $aw = Award::whereUserId(Auth::user()->id)->whereId($id)->first();
+        return view('awards.edit',compact('aw'));
     }
 
     /**
@@ -88,7 +89,18 @@ class AwardsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = Auth::user();
+
+        $awad = Award::findOrFail($id);
+        $awad->date = $request->input('date');
+        $awad->name = $request->input('name');
+        $awad->user_id = $user->id;
+
+        $awad->save();
+
+        $aw = $user->awards;
+
+        return redirect('awards/show')->with('status','Awards successfully Updated');
     }
 
     /**

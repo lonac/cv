@@ -76,7 +76,8 @@ class ProjectsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pr = Projects::whereUserId(Auth::user()->id)->whereId($id)->first();
+        return view('projects.edit',compact('pr'));
     }
 
     /**
@@ -88,7 +89,19 @@ class ProjectsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = Auth::user();
+
+        $pr = Projects::findOrFail($id);
+        $pr->title = $request->input('title');
+        $pr->description = $request->input('description');
+        $pr->reference = $request->input('reference');
+        $pr->user_id = $user->id;
+
+        $pr->save();
+
+        $pr = $user->projects;
+
+        return redirect('projects/show')->with('status','Projects successfully updated');
     }
 
     /**

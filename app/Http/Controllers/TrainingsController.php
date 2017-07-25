@@ -75,7 +75,8 @@ class TrainingsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pt = Trainings::whereUserId(Auth::user()->id)->whereId($id)->first();
+          return view('trainings.edit',compact('pt'));
     }
 
     /**
@@ -87,7 +88,18 @@ class TrainingsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = Auth::user();
+
+        $ptrains = Trainings::findOrFail($id);
+        $ptrains->date = $request->input('date');
+        $ptrains->description = $request->input('description');
+        $ptrains->user_id = $user->id;
+
+        $ptrains->save();
+
+        $pt = $user->trainings;
+
+        return redirect('trainings/show')->with('status','Trainings successfully Updated');
     }
 
     /**
