@@ -75,7 +75,8 @@ class DegreelevelController extends Controller
      */
     public function edit($id)
     {
-        //
+        $dg = Degreelevel::whereUserId(Auth::user()->id)->whereId($id)->first();
+        return view('dglevel.edit',compact('dg'));
     }
 
     /**
@@ -87,7 +88,16 @@ class DegreelevelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = Auth::user();
+        $dglev =Degreelevel::findOrFail($id);
+        $dglev->uniname = $request->input('uniname');
+        $dglev->dgyear = $request->input('dgyear');
+        $dglev->program = $request->input('program');
+        $dglev->user_id = $user->id;
+        $dglev->save();
+        $dgl = $user->degreelevels;
+
+        return redirect('dglevel/show')->with('status','Degree details Update successful');
     }
 
     /**
