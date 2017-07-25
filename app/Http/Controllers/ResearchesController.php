@@ -78,7 +78,8 @@ class ResearchesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $rs = Research::whereUserId(Auth::user()->id)->whereId($id)->first();
+        return view('research.edit',compact('rs'));
     }
 
     /**
@@ -90,7 +91,18 @@ class ResearchesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = Auth::user();
+
+        $rs = Research::findOrFail($id);
+        $rs->name = $request->input('name');
+        $rs->description = $request->input('description');
+        $rs->user_id = $user->id;
+
+        $rs->save();
+
+        $rs = $user->researches;
+
+        return redirect('research/show')->with('status','Researches successfully Updated');
     }
 
     /**

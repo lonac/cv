@@ -144,8 +144,8 @@ Route::patch('referees/{id}/edit','RefereesController@update');
 Route::get('research/create','ResearchesController@create');
 Route::post('research/create','ResearchesController@store');
 Route::get('research/show','ResearchesController@show');
-Route::get('research/edit','ResearchesController@edit');
-Route::patch('research/edit','ResearchesController@update');
+Route::get('research/{id}/edit','ResearchesController@edit');
+Route::patch('research/{id}/edit','ResearchesController@update');
 
 
 //professional affliations
