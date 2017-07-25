@@ -74,7 +74,9 @@ class PresentationsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $acp = Presentations::whereUserId(Auth::user()->id)->whereId($id)->first();
+
+            return view('presentation.edit',compact('acp'));
     }
 
     /**
@@ -86,7 +88,18 @@ class PresentationsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = Auth::user();
+
+        $presents = Presentations::findOrFail($id);
+        $presents->date = $request->input('date');
+        $presents->description = $request->input('description');
+        $presents->user_id = $user->id;
+
+        $presents->save();
+
+        $acp = $user->presentations;
+
+        return redirect('presentation/show')->with('status','Presentattion were successfully updated');
     }
 
     /**

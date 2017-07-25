@@ -187,6 +187,8 @@ Route::patch('trainings/{id}/edit','TrainingsController@update');
 Route::get('presentation/create','PresentationsController@create');
 Route::post('presentation/create','PresentationsController@store');
 Route::get('presentation/show','PresentationsController@show');
+Route::get('presentation/{id}/edit','PresentationsController@edit');
+Route::patch('presentation/{id}/edit','PresentationsController@update');
 
 
 //other activities
