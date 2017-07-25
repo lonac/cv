@@ -195,3 +195,5 @@ Route::patch('presentation/{id}/edit','PresentationsController@update');
 Route::get('activities/create','OtherActivitiesController@create');
 Route::post('activities/create','OtherActivitiesController@store');
 Route::get('activities/show','OtherActivitiesController@show');
+Route::get('activities/{id}/edit','OtherActivitiesController@edit');
+Route::patch('activities/{id}/edit','OtherActivitiesController@update');

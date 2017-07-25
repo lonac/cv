@@ -73,7 +73,8 @@ class OtherActivitiesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $act = Activities::whereUserId(Auth::user()->id)->whereId($id)->first();
+        return view('activities.edit',compact('act'));
     }
 
     /**
@@ -85,7 +86,16 @@ class OtherActivitiesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         $user = Auth::user();
+        $actvty = Activities::findOrFail($id);
+        $actvty->description = $request->input('description');
+        $actvty->user_id = $user->id;
+
+        $actvty->save();
+
+        $act = $user->activities;
+
+        return redirect('activities/show')->with('status','Activities successfully Updated');
     }
 
     /**

@@ -10,11 +10,10 @@
                     <div class="panel-heading">Add your Phonenumber:</div>
                     <div class="panel-body">
                         <form action="{{ url('phonenumbers/create') }}" method="POST" role="form" class="form-horizontal">
-
                             {{ csrf_field() }}
                            <div class="form-group">
                                 <div class="col-sm-10">
-                                    <input type="text" name="phonenumber" value="phonenumber" class="form-control" id="phonenumber" required="required">
+                                    <input type="text" name="phonenumber" placeholder="phonenumber" class="form-control" id="phonenumber" required="required">
                                     @if($errors->has('phonenumber'))
                                         <p class="help-block">
                                             <span class="alert alert-danger">
