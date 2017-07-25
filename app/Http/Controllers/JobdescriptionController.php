@@ -76,7 +76,7 @@ class JobdescriptionController extends Controller
     {
         $jd = Jobdescription::whereUserId(Auth::user()->id)->whereId($id)->first();
 
-         return view('jobdesc.show',compact('jd'));
+         return view('jobdesc.edit',compact('jd'));
 
     }
 
