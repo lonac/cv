@@ -82,6 +82,9 @@ Route::patch('clevel/{id}/edit','CertificatelevelController@update');
 Route::get('dlevel/create','DiplomalevelController@create');
 Route::post('dlevel/create','DiplomalevelController@store');
 Route::get('dlevel/show','DiplomalevelController@show');
+Route::get('dlevel/{id}/edit','DiplomalevelController@edit');
+Route::patch('dlevel/{id}/edit','DiplomalevelController@update');
+
 
 //dglevel
 Route::get('dglevel/create','DegreelevelController@create');

@@ -7,10 +7,10 @@
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
 				@if (session('status'))
-						    <div class="alert alert-success">
-						        {{ session('status') }}
-						    </div>
-						@endif
+				    <div class="alert alert-success">
+				        {{ session('status') }}
+				    </div>
+				@endif
 				<div class="panel panel-inverse">
 					<div class="panel-heading"><strong>ORDINARY-LEVEL DETAILS:</strong></div>
 						<div class="panel panel-body">

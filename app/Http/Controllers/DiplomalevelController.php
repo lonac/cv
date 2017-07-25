@@ -76,7 +76,8 @@ class DiplomalevelController extends Controller
      */
     public function edit($id)
     {
-        //
+        $dl = Diplomalevel::whereUserId(Auth::user()->id)->whereId($id)->first();
+        return view('dlevel.edit',compact('dl'));
     }
 
     /**
@@ -88,7 +89,19 @@ class DiplomalevelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = Auth::user();
+
+                $dlev = Diplomalevel::findOrFail($id);
+                $dlev->colname = $request->input('colname');
+                $dlev->dyear = $request->input('dyear');
+                $dlev->program = $request->input('program');
+                $dlev->user_id = $user->id;
+
+                $dlev->save();
+
+                $dl = $user->diplomalevels;
+
+                return redirect('dlevel/show')->with('status','Diploma Details Successfully Updated');
     }
 
     /**
