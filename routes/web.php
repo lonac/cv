@@ -121,6 +121,8 @@ Route::get('experience/show','ExperienceController@show');
 Route::get('interests/create','InterestsController@create');
 Route::post('interests/create','InterestsController@store');
 Route::get('interests/show','InterestsController@show');
+Route::get('interests/{id}/edit','InterestsController@edit');
+Route::patch('interests/{id}/edit','InterestsController@update');
 
 //skills
 Route::get('skills/create','SkillsController@create');

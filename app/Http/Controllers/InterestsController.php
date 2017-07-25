@@ -74,7 +74,8 @@ class InterestsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $int = Interests::whereUserId(Auth::user()->id)->whereId($id)->first();
+        return view('interests.edit',compact('int'));
     }
 
     /**
@@ -86,7 +87,17 @@ class InterestsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         $user = Auth::user();
+
+        $intr =Interests::findOrFail($id);
+        $intr->interest = $request->input('interest');
+        $intr->user_id = $user->id;
+
+        $intr->save();
+
+        $int = $user->interests;
+
+        return redirect('interests/show')->with('status','Interests successfully updated');
     }
 
     /**
