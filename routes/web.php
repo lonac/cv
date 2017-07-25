@@ -72,6 +72,9 @@ Route::get('alevel/show','AlevelController@show');
 Route::get('clevel/create','CertificatelevelController@create');
 Route::post('clevel/create','CertificatelevelController@store');
 Route::get('clevel/show','CertificatelevelController@show');
+Route::get('clevel/{id}/edit','CertificatelevelController@edit');
+Route::patch('clevel/{id}/edit','CertificatelevelController@update');
+
 
 //dlevel
 Route::get('dlevel/create','DiplomalevelController@create');

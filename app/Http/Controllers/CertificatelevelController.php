@@ -38,8 +38,7 @@ class CertificatelevelController extends Controller
      */
     public function store(Request $request)
     {
-        $user = Auth::user();
-
+                $user = Auth::user();
                 $clev = new Certificatelevel;
                 $clev->colname = $request->input('colname');
                 $clev->cyear = $request->input('cyear');
@@ -75,7 +74,8 @@ class CertificatelevelController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cl = Certificatelevel::whereUserId(Auth::user()->id)->whereId($id)->first();
+        return view('clevel.edit',compact('cl'));
     }
 
     /**
@@ -87,7 +87,18 @@ class CertificatelevelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = Auth::user();
+        $clev = Certificatelevel::findOrFail($id);
+        $clev->colname = $request->input('colname');
+        $clev->cyear = $request->input('cyear');
+        $clev->remark = $request->input('remark');
+        $clev->user_id = $user->id;
+
+        $clev->save();
+
+        $cl = $user->certificatelevels;
+
+        return redirect('clevel/show')->with('status','Certificate details were successful Updated');
     }
 
     /**
