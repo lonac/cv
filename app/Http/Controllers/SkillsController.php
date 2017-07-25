@@ -39,8 +39,7 @@ class SkillsController extends Controller
      */
     public function store(Request $request)
     {
-     $user = Auth::user();
-
+        $user = Auth::user();
         $sk = new Skills;
         $sk->skillname = $request->input('skillname');
         $sk->description = $request->input('description');
@@ -75,7 +74,8 @@ class SkillsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $sk = Skills::whereUserId(Auth::user()->id)->whereId($id)->first();
+        return view('skills.edit',compact('sk'));
     }
 
     /**
@@ -87,7 +87,17 @@ class SkillsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = Auth::user();
+        $sk = Skills::findOrFail($id);
+        $sk->skillname = $request->input('skillname');
+        $sk->description = $request->input('description');
+        $sk->user_id = $user->id;
+
+        $sk->save();
+
+        $sk = $user->skills;
+
+        return redirect('skills/show')->with('status','Skills and Talent Successfully Updated');
     }
 
     /**

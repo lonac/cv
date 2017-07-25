@@ -128,16 +128,24 @@ Route::patch('interests/{id}/edit','InterestsController@update');
 Route::get('skills/create','SkillsController@create');
 Route::post('skills/create','SkillsController@store');
 Route::get('skills/show','SkillsController@show');
+Route::get('skills/{id}/edit','SkillsController@edit');
+Route::patch('skills/{id}/edit','SkillsController@update');
+
 
 //referees
 Route::get('referees/create','RefereesController@create');
 Route::post('referees/create','RefereesController@store');
 Route::get('referees/show','RefereesController@show');
+Route::get('referees/{id}/edit','RefereesController@edit');
+Route::patch('referees/{id}/edit','RefereesController@update');
+
 
 //researches
 Route::get('research/create','ResearchesController@create');
 Route::post('research/create','ResearchesController@store');
 Route::get('research/show','ResearchesController@show');
+Route::get('research/edit','ResearchesController@edit');
+Route::patch('research/edit','ResearchesController@update');
 
 
 //professional affliations
