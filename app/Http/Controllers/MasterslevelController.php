@@ -39,18 +39,15 @@ class MasterslevelController extends Controller
     public function store(Request $request)
     {
         $user = Auth::user();
+        $mlev = new Masterslevel;
+        $mlev->uniname = $request->input('uniname');
+        $mlev->myear = $request->input('myear');
+        $mlev->program = $request->input('program');
+        $mlev->user_id = $user->id;
+        $mlev->save();
+        $ml = $user->masterslevels;
 
-                $mlev = new Masterslevel;
-                $mlev->uniname = $request->input('uniname');
-                $mlev->myear = $request->input('myear');
-                $mlev->program = $request->input('program');
-                $mlev->user_id = $user->id;
-
-                $mlev->save();
-
-                $ml = $user->masterslevels;
-
-                return view('mlevel.create',compact('ml'));
+        return view('mlevel.create',compact('ml'));
     }
 
     /**
@@ -75,7 +72,8 @@ class MasterslevelController extends Controller
      */
     public function edit($id)
     {
-        //
+        $ml = Masterslevel::whereUserId(Auth::user()->id)->whereId($id)->first();
+        return view('mlevel.edit',compact('ml'));
     }
 
     /**
@@ -87,7 +85,16 @@ class MasterslevelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = Auth::user();
+        $mlev = Masterslevel::findOrFail($id);
+        $mlev->uniname = $request->input('uniname');
+        $mlev->myear = $request->input('myear');
+        $mlev->program = $request->input('program');
+        $mlev->user_id = $user->id;
+        $mlev->save();
+        $ml = $user->masterslevels;
+
+        return redirect('mlevel/show')->with('status','Master Details Successfully Updated');
     }
 
     /**

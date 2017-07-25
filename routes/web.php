@@ -98,11 +98,15 @@ Route::patch('dglevel/{id}/edit','DegreelevelController@update');
 Route::get('mlevel/create','MasterslevelController@create');
 Route::post('mlevel/create','MasterslevelController@store');
 Route::get('mlevel/show','MasterslevelController@show');
+Route::get('mlevel/{id}/edit','MasterslevelController@edit');
+Route::patch('mlevel/{id}/edit','MasterslevelController@update');
 
 //Phdlevel
 Route::get('plevel/create','PhdlevelController@create');
 Route::post('plevel/create','PhdlevelController@store');
 Route::get('plevel/show','PhdlevelController@show');
+Route::get('plevel/{id}/edit','PhdlevelController@edit');
+Route::patch('plevel/{id}/edit','PhdlevelController@update');
 
 //Mycv
 Route::get('mycv/show','MycvController@index');
