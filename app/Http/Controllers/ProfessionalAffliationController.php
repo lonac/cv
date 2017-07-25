@@ -77,7 +77,7 @@ class ProfessionalAffliationController extends Controller
     public function edit($id)
     {
         $pa = Affiliations::whereUserId(Auth::user()->id)->whereId($id)->first();
-        return view('professionalaffiliation.show',compact('pa'));
+        return view('professionalaffiliation.edit',compact('pa'));
     }
 
     /**
