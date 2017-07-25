@@ -75,7 +75,8 @@ class RefereesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $rf = Referees::whereUserId(Auth::user()->id)->whereId($id)->first();
+        return view('referees.edit',compact('rf'));
     }
 
     /**
@@ -87,7 +88,19 @@ class RefereesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = Auth::user();
+
+        $rf = Referees::findOrFail($id);
+        $rf->refaname = $request->input('refaname');
+        $rf->title = $request->input('title');
+        $rf->address = $request->input('address');
+        $rf->user_id = $user->id;
+
+        $rf->save();
+
+        $rf = $user->referees;
+
+        return redirect('referees/show')->with('status','Refeeres successfully Updated');
     }
 
     /**
