@@ -74,7 +74,8 @@ class ExperienceController extends Controller
      */
     public function edit($id)
     {
-        //
+        $ex = Experience::whereUserId(Auth::user()->id)->whereId($id)->first();
+        return view('experience.edit',compact('ex'));
     }
 
     /**
@@ -86,7 +87,18 @@ class ExperienceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = Auth::user();
+
+        $exp = Experience::findOrFail($id);
+        $exp->organisation = $request->input('organisation');
+        $exp->role = $request->input('role');
+        $exp->user_id = $user->id;
+
+        $exp->save();
+
+        $ex = $user->experiences;
+
+        return redirect('experience/show')->with('status','Experiences successfully updated');
     }
 
     /**
