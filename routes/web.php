@@ -152,6 +152,8 @@ Route::patch('research/{id}/edit','ResearchesController@update');
 Route::get('professionalaffiliation/create','ProfessionalAffliationController@create');
 Route::post('professionalaffiliation/create','ProfessionalAffliationController@store');
 Route::get('professionalaffiliation/show','ProfessionalAffliationController@show');
+Route::get('professionalaffiliation/{id}/edit','ProfessionalAffliationController@edit');
+Route::patch('professionalaffiliation/{id}/edit','ProfessionalAffliationController@update');
 
 //awards
 Route::get('awards/create','AwardsController@create');

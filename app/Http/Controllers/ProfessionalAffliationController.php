@@ -76,7 +76,8 @@ class ProfessionalAffliationController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pa = Affiliations::whereUserId(Auth::user()->id)->whereId($id)->first();
+        return view('professionalaffiliation.show',compact('pa'));
     }
 
     /**
@@ -88,7 +89,18 @@ class ProfessionalAffliationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = Auth::user();
+
+        $pa = Affiliations::findOrFail($id);
+        $pa->name = $request->input('name');
+        $pa->user_id = $user->id;
+
+        $pa->save();
+
+        $pa = $user->affiliations;
+
+        return redirect('professionalaffiliation/show')
+        ->with('status','Professional affiliation successfully updated');
     }
 
     /**
