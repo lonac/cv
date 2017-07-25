@@ -76,7 +76,8 @@ class AlevelController extends Controller
      */
     public function edit($id)
     {
-        //
+        $al = Alevel::whereUserId(Auth::user()->id)->whereId($id)->first();
+        return view('alevel.edit',compact('al'));
     }
 
     /**
@@ -88,7 +89,19 @@ class AlevelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         $user = Auth::user();
+
+                $alev = Alevel::findOrFail($id);
+                $alev->alevname = $request->input('alevname');
+                $alev->ayear = $request->input('ayear');
+                $alev->remark = $request->input('remark');
+                $alev->user_id = $user->id;
+
+                $alev->save();
+
+                $al = $user->alevels;
+
+                return redirect('alevel/show')->with('status','Successful Updated');
     }
 
     /**

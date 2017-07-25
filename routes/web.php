@@ -67,6 +67,8 @@ Route::patch('olevel/{id}/edit','OlevelController@update');
 Route::get('alevel/create','AlevelController@create');
 Route::post('alevel/create','AlevelController@store');
 Route::get('alevel/show','AlevelController@show');
+Route::get('alevel/{id}/edit','AlevelController@edit');
+Route::patch('alevel/{id}/edit','AlevelController@update');
 
 //clevel
 Route::get('clevel/create','CertificatelevelController@create');
