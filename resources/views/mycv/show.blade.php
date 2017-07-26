@@ -6,125 +6,84 @@
 	<div class="container">
 		<div class="panel panel-default">
 			<div class ="panel-body">
-		<div class="row">
-			{{--  Personal--}}
-			@include('personaldetails._form')
-		</div>
-		<div class="row">
-		<div class ="panel panel-body">
-			<div class="col-md-5 col-md-offset-0">
-				@if($address!==null&& $pers!==null)
-					{{$address->address}}, </br>{{$address->location}}.</br>{{Auth::user()->email}}</br>	
-				@endif
-				@if($myphonenumbers->count()>0)Mobile Phones:
-					@foreach($myphonenumbers as $phonee)
-	              	- {{ $phonee->phonenumber}}</br>
-	        		@endforeach
-		    	@endif
-			</div>
-			<div class="col-md-4 col-md-offset-3">
-				@if($pers!==null)
-					Citizenship : {{$pers->nationality}} </br>Languages : {{ $pers->language}} </br>
-					Gender :    {{$pers->gender}} </br>Marital Status : {{$pers->marital}}</br>Birthdate: {{$pers->birthdate}}</br>		
-				@endif
-			</div>
-		</div>
-		</div>
-		<div class="row">
-				{{--Ordinary level--}}
-				@include('olevel._form')
-		</div>
-			
 			<div class="row">
-				@include('alevel._form')
-			</div>
+				
+							{{--  Personal--}}
+							@include('personaldetails._form')
+					
+							<div class ="panel panel-body">
+									<div class="col-md-5 col-md-offset-0">
+										@if($address!==null&& $pers!==null)
+											{{$address->address}}, </br>{{$address->location}}.</br>{{Auth::user()->email}}</br>	
+										@endif
+										@if($myphonenumbers->count()>0)Mobile Phones:
+											@foreach($myphonenumbers as $phonee)
+							              	- {{ $phonee->phonenumber}}</br>
+							        		@endforeach
+								    	@endif
+									</div>
+								<div class="col-md-4 col-md-offset-3">
+									@if($pers!==null)
+										Citizenship : {{$pers->nationality}} </br>Languages : {{ $pers->language}} </br>
+										Gender :    {{$pers->gender}} </br>Marital Status : {{$pers->marital}}</br>Birthdate: {{$pers->birthdate}}</br>		
+									@endif
+								</div>
+							</div>
+							{{--Ordinary level--}}
+							@include('olevel._form')
+						
+							@include('alevel._form')
 
-			{{-- Certificates--}}
-			<div class="row">
-				@include('clevel._form')
-			</div>
+						{{-- Certificates--}}
+							@include('clevel._form')
 
-			{{-- Diploma --}}
-			<div class="row">
-				@include('dlevel._form')
-			</div>
+						{{-- Diploma --}}
+							@include('dlevel._form')
+						{{--Degree}}
+							@include('dglevel._form')
 
-			{{-- Degree --}}
-			<div class="row">
-				@include('dglevel._form')
-			</div>
+						{{-- Masters--}}
+							@include('mlevel._form')
+						{{-- Doctorial --}}
+							@include('plevel._form');
+						
+						{{--Experiences--}}
+							@include('experience._form')
 
-			{{-- Masters--}}
-			<div class="row">
-				@include('mlevel._form')
-			</div>
+							@include('interests._form')
 
-			{{-- Doctorial --}}
-			<div class="row">
-				@include('plevel._form');
-			</div>
-			
-			{{--Experiences--}}
-			<div class="row">	
-				@include('experience._form')
-			</div>
+						{{--skills--}}
+							@include('skills._form')
 
-			<div class="row">
-				@include('interests._form')
+						{{--fereees--}}
+							@include('referees._form')
+
+						{{--Research--}}
+							@include('research._form')
+
+						{{--Professional afflication--}}
+			             	@include('professionalaffiliation._form')
+
+						{{--Research--}}
+							@include('awards._form')
+
+						{{--jobdescriptions--}}
+							@include('jobdesc._form')
+
+						{{--Projects--}}
+							@include('projects._form')
+
+						{{--Professional Trainings--}}
+							@include('trainings._form')
+
+						{{--Academic presentations--}}
+							@include('presentation._form')
+
+						{{--Activities--}}
+							@include('activities._form')
 			</div>
-
-			{{--skills--}}
-			<div class="row">
-				@include('skills._form')
-			</div>
-
-			{{--fereees--}}
-			<div class="row">
-				@include('referees._form')
-			</div>
-
-			{{--Research--}}
-			<div class="row">
-				@include('research._form')
-			</div>
-
-			{{--Professional afflication--}}
-			<div class="row">
-             	@include('professionalaffiliation._form')
-       		 </div>
-
-			{{--Research--}}
-			<div class="row">
-				@include('awards._form')
-			</div>
-
-			{{--jobdescriptions--}}
-			<div class="row">
-				@include('jobdesc._form')
-			</div>
-
-			{{--Projects--}}
-			<div class="row">
-				@include('projects._form')
-			</div>
-
-			{{--Professional Trainings--}}
-			<div class="row">
-				@include('trainings._form')
-			</div>
-
-			{{--Academic presentations--}}
-			<div class="row">
-				@include('presentation._form')
-			</div>
-
-			{{--Activities--}}
-			<div class="row">
-				@include('activities._form')
-			</div>
-
 		</div>
 	</div>
-	</div>
+</div>
 
 @endsection

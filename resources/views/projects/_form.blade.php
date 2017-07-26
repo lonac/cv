@@ -1,3 +1,4 @@
+<div class ="row">
 <div class="col-md-12 col-md-offset-0">
 <div class="panel panel-inverse">
   @if($pr->count()>0)
@@ -11,6 +12,7 @@
     @else
   @endif
   </div>  
+</div>
 </div>
 </div>
   
